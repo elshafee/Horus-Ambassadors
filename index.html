@@ -1,0 +1,1543 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>سفراء حورس | Horus Ambassadors - كلية الهندسة جامعة حورس - مصر</title>
+  <meta
+    content="الموقع الرسمي لأسرة سفراء حورس (Horus Ambassadors) - كلية الهندسة جامعة حورس - مصر. الأسرة الطلابية الأولى الفائزة بالمركز الأول على مستوى الجامعة في الأنشطة الطلابية."
+    name="description" />
+  <link href="/logo/Horus Ambassadors.png" rel="icon" type="image/png" />
+  <!-- CSS Stylesheet -->
+  <link href="/css/styles.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- ==========================================================================
+       PAGE LOADER — Branded intro animation
+       ========================================================================== -->
+  <div aria-hidden="true" class="page-loader" id="pageLoader">
+    <div class="loader-blob" id="loaderBlob"></div>
+    <div class="loader-inner">
+      <img alt="Horus Ambassadors" class="loader-logo" src="/logo/Horus Ambassadors.png" />
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-text">سفراء حورس</p>
+    </div>
+  </div>
+  <!-- ==========================================================================
+       ANNOUNCEMENT BAR (dismissible)
+       ========================================================================== -->
+  <div class="announce-bar" id="announceBar" role="alert">
+    <div class="announce-inner">
+      <span class="announce-dot"></span>
+      <span class="announce-text" data-i18n="announce.text">🎉 باب الانضمام لأسرة سفراء حورس مفتوح الآن! سارع بتقديم
+        طلبك قبل انتهاء الفرصة.</span>
+      <a class="announce-cta" data-i18n="announce.cta" href="#apply">سجّل الآن ←</a>
+    </div>
+    <button aria-label="Close announcement" class="announce-close" id="announceClose">✕</button>
+  </div>
+  <!-- ==========================================================================
+       ANIMATED BACKGROUND — Engineering Node Network + Diagonal Lines
+       ========================================================================== -->
+  <div aria-hidden="true" class="bg-canvas-wrap">
+    <canvas id="bgCanvas"></canvas>
+    <!-- Subtle diagonal grid overlay -->
+    <div class="bg-diagonal-grid"></div>
+    <!-- Radial glow spots -->
+    <div class="bg-glow bg-glow-orange"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+    <div class="bg-glow bg-glow-navy"></div>
+  </div>
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR — SLIM & CLEAN REDESIGN
+       ========================================================================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+      <!-- Brand: Single Ambassador Logo + Name only -->
+      <a aria-label="Horus Ambassadors Homepage" class="brand-lockup" href="#hero">
+        <div class="brand-logo-amb-wrap">
+          <img alt="Horus Ambassadors" class="brand-logo-amb" src="/logo/Horus Ambassadors.png" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brand.title">سفراء حورس</span>
+          <span class="brand-sub" data-i18n="brand.sub">كلية الهندسة • HUE</span>
+        </div>
+      </a>
+      <!-- Center: Navigation pill -->
+      <nav aria-label="Main Navigation" class="nav-pill-wrap">
+        <ul class="nav-menu">
+          <li><a class="nav-link active" data-i18n="nav.home" href="#hero">الرئيسية</a></li>
+          <li><a class="nav-link" data-i18n="nav.about" href="#about">عن الأسرة</a></li>
+          <li><a class="nav-link" data-i18n="nav.pillars" href="#pillars">الأنشطة</a></li>
+          <li><a class="nav-link" data-i18n="nav.timeline" href="#timeline">مسيرتنا</a></li>
+          <li><a class="nav-link" data-i18n="nav.gallery" href="gallery.html">الصور</a></li>
+          <li><a class="nav-link" data-i18n="nav.leadership" href="#leadership">القيادة</a></li>
+          <li><a class="nav-link" data-i18n="nav.events" href="events.html">الفعاليات</a></li>
+        </ul>
+      </nav>
+      <!-- Right: Actions -->
+      <div class="nav-actions">
+        <button aria-label="Toggle Theme" class="theme-toggle" id="themeToggleBtn" title="تبديل المظهر">☀️</button>
+        <button aria-label="Toggle Language" class="lang-toggle" id="langToggleBtn">EN</button>
+        <a class="btn btn-brand nav-cta" data-i18n="nav.apply" href="#apply">انضم إلينا</a>
+        <button aria-label="Toggle Mobile Menu" class="mobile-toggle" id="mobileMenuBtn">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+  <main>
+    <!-- ==========================================================================
+         HERO SECTION (DUAL BADGE & BRAND COLORS)
+         ========================================================================== -->
+    <section class="hero-section" id="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <!-- Badges Row: University Affiliation & Award -->
+            <div class="hero-badges-row">
+              <div class="hero-univ-pill" style="display: flex; gap: 10px;">
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img alt="Horus University - Egypt" src="/logo/horus_university_official_card.png"
+                    style="border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.3); background: white; height: 28px;" />
+                  <span data-i18n="hero.univ_badge">جامعة حورس - مصر (HUE)</span>
+                </div>
+                <span style="opacity: 0.5;">|</span>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <img alt="Horus Ambassadors" src="/logo/Horus Ambassadors.png" style="height: 28px;" />
+                  <span>سفراء حورس</span>
+                </div>
+              </div>
+              <div class="hero-award-badge">
+                <span class="trophy-icon">🏆</span>
+                <span data-i18n="hero.award">المركز الأول على مستوى الجامعة 2022 / 2023</span>
+              </div>
+            </div>
+            <h1 class="hero-title">
+              <span data-i18n="hero.title_pre">روّاد الأثر و</span>
+              <span class="highlight-brand" data-i18n="hero.title_highlight">سفراء التميّز الطلابي</span>
+              <span data-i18n="hero.title_post">بكلية الهندسة</span>
+            </h1>
+            <p class="hero-description" data-i18n="hero.desc">
+              أسرة سفراء حورس (Horus Ambassadors) هي الأسرة الطلابية الرائدة بجامعة حورس - مصر، تجمع بين القيادة
+              الهندسية، العمل الخيري المجتمعي، وتنظيم كبرى المؤتمرات والملتقيات العلمية.
+            </p>
+            <div class="hero-cta-group">
+              <a class="btn btn-brand" data-i18n="hero.cta_explore" href="#pillars">استكشف مسيرتنا</a>
+              <a class="btn btn-outline" data-i18n="hero.cta_join" href="#apply">انضم للسفراء</a>
+            </div>
+            <div class="hero-stats-row">
+              <div class="hero-stat-item">
+                <h4>+5</h4>
+                <p data-i18n="hero.stat_years">سنوات من العطاء</p>
+              </div>
+              <div class="hero-stat-item">
+                <h4>#1</h4>
+                <p data-i18n="hero.stat_rank">المركز الأول جامعياً</p>
+              </div>
+              <div class="hero-stat-item">
+                <h4>+15</h4>
+                <p data-i18n="hero.stat_events">مؤتمراً وفعالية كبرى</p>
+              </div>
+            </div>
+          </div>
+          <!-- Hero Media Showcase Card -->
+          <div class="hero-media-card">
+            <video autoplay="" class="hero-media-cover" loop="" muted="" playsinline=""
+              src="/events/trip ain soukna @ 2025/VN20251027_220307.mp4"></video>
+            <div class="hero-media-overlay">
+              <button aria-label="Watch Horus Ambassadors Video" class="hero-video-trigger open-video-trigger">
+                ▶
+              </button>
+              <span class="hero-media-tag" data-i18n="hero.media_tag">الفيديو التوثيقي الرسمي</span>
+              <h3 class="hero-media-caption" data-i18n="hero.media_caption">شاهد رحلة وإنجازات سفراء حورس</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         ABOUT & AFFILIATION SECTION
+         ========================================================================== -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text-col reveal reveal-left">
+            <div class="section-tag" data-i18n="about.tag">من نحن</div>
+            <h2 class="section-title" data-i18n="about.title">نصنع قادة الغد ونترك أثراً يبقى</h2>
+            <p class="section-subtitle" data-i18n="about.p1" style="margin-bottom: 20px;">
+              تأسست أسرة سفراء حورس في أواخر عام 2020 بكلية الهندسة - جامعة حورس - مصر (HUE)، لتكون منصة انطلاق للشباب
+              الطموح وصوتاً للمبادرة الطلابية الإيجابية.
+            </p>
+            <p class="section-subtitle" data-i18n="about.p2">
+              على مدار أكثر من 5 سنوات، نظمت الأسرة أضخم الفعاليات بالجامعة ونالت درع التميز والمركز الأول كأفضل فريق
+              طلابي، مكرسةً جهودها لخدمة المجتمع ودعم مسيرة التعليم الهندسي.
+            </p>
+            <div class="about-features">
+              <div class="glass-card feature-box">
+                <div class="feature-icon">⚙️</div>
+                <h4 data-i18n="about.f1_title">القيادة الهندسية</h4>
+                <p data-i18n="about.f1_desc">صقل مهارات التنظيم، التفكير النقدي، وإدارة المشروعات بين طلبة الهندسة
+                  بمختلف الأقسام.</p>
+              </div>
+              <div class="glass-card feature-box">
+                <div class="feature-icon">🤝</div>
+                <h4 data-i18n="about.f2_title">التكافل والعمل الخيري</h4>
+                <p data-i18n="about.f2_desc">إطلاق قوافل رمضان السنوية، المعارض الخيرية، ودعم المبادرات الإنسانية كإغاثة
+                  غزة مع جمعية رسالة.</p>
+              </div>
+              <div class="glass-card feature-box">
+                <div class="feature-icon">🏛️</div>
+                <h4 data-i18n="about.f3_title">التمثيل المؤسسي</h4>
+                <p data-i18n="about.f3_desc">تنظيم المؤتمرات العلمية ويوم التوظيف السنوي بشراكة وثيقة مع قيادات الكلية
+                  والجامعة.</p>
+              </div>
+              <div class="glass-card feature-box">
+                <div class="feature-icon">🌟</div>
+                <h4 data-i18n="about.f4_title">الروح والترابط الطلابي</h4>
+                <p data-i18n="about.f4_desc">خلق مجتمع جامعي حيوي نابض بالمحبة، الفعاليات الترفيهية، والرحلات
+                  الاستكشافية في ربوع مصر.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Mosaic Photo Showcase -->
+          <div class="about-gallery-mosaic reveal reveal-right">
+            <div class="mosaic-img-wrap img-main">
+              <img alt="Ambassadors Team Photo" class="mosaic-img" loading="lazy"
+                src="/Ambassadors Photos/IMG-20230710-WA0192.jpg" />
+            </div>
+            <div class="mosaic-img-wrap img-sub-1">
+              <img alt="Architectural Department Ceremony" class="mosaic-img" loading="lazy"
+                src="/events/Architectura department honorary event/IMG_9781.jpg" />
+            </div>
+            <div class="mosaic-img-wrap img-sub-2">
+              <img alt="Reception Day for Freshmen" class="mosaic-img" loading="lazy"
+                src="/events/Reception day  2026/IMG-20250921-WA0001.jpg" />
+            </div>
+            <div class="mosaic-badge">منذ 2020</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         VISION & MISSION
+         ========================================================================== -->
+    <section class="vision-section" id="vision-mission" style="padding-bottom: 20px;">
+      <div class="container">
+        <div class="vision-grid"
+          style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+          <!-- Vision -->
+          <div class="glass-card vision-card reveal reveal-up" data-tilt=""
+            style="--delay:0ms; padding: 40px 30px; text-align: center; border-top: 4px solid var(--hue-gold);">
+            <div class="vision-icon" style="font-size: 3.5rem; margin-bottom: 16px;">👁️</div>
+            <h3 class="vision-title" data-i18n="vm.vision_title"
+              style="font-size: 1.8rem; font-weight: 800; color: var(--hue-gold-light); margin-bottom: 16px;">رؤيتنا
+            </h3>
+            <p class="vision-text" data-i18n="vm.vision_text"
+              style="font-size: 1.1rem; line-height: 1.7; color: var(--text-main);">
+              أن نكون النموذج الرائد للنشاط الطلابي الجامعي في مصر، والمحفز الأول لصناعة مهندسين قادة يجمعون بين الكفاءة
+              الأكاديمية والمسؤولية المجتمعية.
+            </p>
+          </div>
+          <!-- Mission -->
+          <div class="glass-card vision-card reveal reveal-up" data-tilt=""
+            style="--delay:150ms; padding: 40px 30px; text-align: center; border-top: 4px solid var(--ha-orange);">
+            <div class="vision-icon" style="font-size: 3.5rem; margin-bottom: 16px;">🎯</div>
+            <h3 class="vision-title" data-i18n="vm.mission_title"
+              style="font-size: 1.8rem; font-weight: 800; color: var(--ha-orange-light); margin-bottom: 16px;">رسالتنا
+            </h3>
+            <p class="vision-text" data-i18n="vm.mission_text"
+              style="font-size: 1.1rem; line-height: 1.7; color: var(--text-main);">
+              تمكين طلاب كلية الهندسة من اكتشاف قدراتهم وتطويرها من خلال بيئة داعمة تجمع بين التدريب المهني، المبادرات
+              الخيرية، والأنشطة الترفيهية، لبناء جيل واعٍ يساهم في نهضة وطنه.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         UPCOMING EVENT + COUNTDOWN
+         ========================================================================== -->
+    <section class="upcoming-section" id="upcoming">
+      <div class="container">
+        <div class="glass-card upcoming-card reveal reveal-up">
+          <div class="upcoming-badge-row">
+            <span class="upcoming-live-dot"></span>
+            <span class="upcoming-label" data-i18n="upcoming.label">الفعالية القادمة</span>
+          </div>
+          <h2 class="upcoming-title" data-i18n="upcoming.title">موسم التقديم الجديد لأسرة سفراء حورس 2026 / 2027</h2>
+          <p class="upcoming-desc" data-i18n="upcoming.desc">تستعد أسرة سفراء حورس لفتح باب الانضمام الرسمي للعام
+            الأكاديمي الجديد. لا تفوّت هذه الفرصة الاستثنائية لتكون جزءاً من الأسرة رقم #1 بالجامعة!</p>
+          <div class="countdown-wrap" id="mainCountdown">
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-days">00</span>
+              <span class="countdown-lbl" data-i18n="cd.days">يوم</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-hours">00</span>
+              <span class="countdown-lbl" data-i18n="cd.hours">ساعة</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-mins">00</span>
+              <span class="countdown-lbl" data-i18n="cd.mins">دقيقة</span>
+            </div>
+            <span class="countdown-sep">:</span>
+            <div class="countdown-unit">
+              <span class="countdown-num" id="cd-secs">00</span>
+              <span class="countdown-lbl" data-i18n="cd.secs">ثانية</span>
+            </div>
+            <a class="btn btn-brand upcoming-cta" data-i18n="upcoming.cta" href="#apply">سجّل اهتمامك الآن ←</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         ANIMATED STATS COUNTER SECTION
+         ========================================================================== -->
+    <section class="stats-section" id="statsSection">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="glass-card stat-card reveal reveal-up" style="--delay:0ms">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-number" data-suffix="+" data-target="5">0</div>
+            <div class="stat-label" data-i18n="stats.years">سنوات من التأثير</div>
+          </div>
+          <div class="glass-card stat-card">
+            <div class="stat-icon">🥇</div>
+            <div class="stat-number" data-prefix="#" data-target="1">0</div>
+            <div class="stat-label" data-i18n="stats.rank">أفضل أسرة طلابية</div>
+          </div>
+          <div class="glass-card stat-card reveal reveal-up" style="--delay:80ms">
+            <div class="stat-icon">🎓</div>
+            <div class="stat-number" data-suffix="+" data-target="1000">0</div>
+            <div class="stat-label" data-i18n="stats.students">طالب تم إرشادهم</div>
+          </div>
+          <div class="glass-card stat-card reveal reveal-up" style="--delay:160ms">
+            <div class="stat-icon">🌙</div>
+            <div class="stat-number" data-suffix="" data-target="5">0</div>
+            <div class="stat-label" data-i18n="stats.ramadan">حملات رمضانية متتالية</div>
+          </div>
+          <div class="glass-card stat-card reveal reveal-up" style="--delay:240ms">
+            <div class="stat-icon">📋</div>
+            <div class="stat-number" data-suffix="+" data-target="15">0</div>
+            <div class="stat-label" data-i18n="stats.conferences">مؤتمراً وملتقى توظيفي</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         ACHIEVEMENTS & TROPHY WALL
+         ========================================================================== -->
+    <section class="achievements-section" id="achievements">
+      <div class="container">
+        <div class="section-header reveal reveal-up">
+          <div class="section-tag" data-i18n="ach.tag">🏆 درع التميّز</div>
+          <h2 class="section-title" data-i18n="ach.title">إنجازات تُفخر بها قاعة الأسرة</h2>
+          <p class="section-subtitle" data-i18n="ach.subtitle">شهادات التميّز والمراكز الأولى التي نالتها أسرة سفراء
+            حورس على مدار مسيرتها</p>
+        </div>
+        <div class="bento-grid">
+          <!-- Card 1: Large (2x2) -->
+          <div class="bento-card bento-large reveal reveal-up"
+            onclick="window.open('achievement.html?id=first_place', '_self')" style="--delay:0ms">
+            <div class="bento-bg">
+              <img alt="Award" loading="lazy" src="/Ambassadors Photos/IMG-20230710-WA0198.jpg" />
+              <div class="bento-overlay bento-overlay--gold"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--gold">#1 جامعة حورس</div>
+              <div class="bento-text">
+                <div class="trophy-year">2022 / 2023</div>
+                <h3 class="trophy-title">المركز الأول جامعياً</h3>
+                <p class="trophy-sub">درع التميّز — أفضل أسرة طلابية على مستوى جامعة حورس - مصر في الأنشطة الطلابية</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 2: Wide (2x1) -->
+          <div class="bento-card bento-wide reveal reveal-up" onclick="window.open('achievement.html?id=gaza', '_self')"
+            style="--delay:80ms">
+            <div class="bento-bg">
+              <img alt="Charity" loading="lazy"
+                src="/events/Ramadan 2025/WhatsApp Image 2025-03-11 at 19.11.44_0e69a1c2.jpg" />
+              <div class="bento-overlay bento-overlay--orange"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--orange">مسؤولية مجتمعية</div>
+              <div class="bento-text">
+                <div class="trophy-year">2023 — 2024</div>
+                <h3 class="trophy-title">شراكة إغاثة غزة</h3>
+                <p class="trophy-sub">المشاركة الفاعلة مع جمعية رسالة في تعبئة وإرسال قوافل الإغاثة لأهالينا في غزة</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 3: Square (1x1) -->
+          <div class="bento-card bento-square reveal reveal-up"
+            onclick="window.open('achievement.html?id=ramadan', '_self')" style="--delay:160ms">
+            <div class="bento-bg">
+              <img alt="Ramadan" loading="lazy" src="/Ambassadors Photos/IMG-20230710-WA0192.jpg" />
+              <div class="bento-overlay bento-overlay--orange"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--orange">مستمر منذ 2021</div>
+              <div class="bento-text">
+                <div class="trophy-year">2021 — مستمر</div>
+                <h3 class="trophy-title">5 حملات رمضانية</h3>
+                <p class="trophy-sub">توزيع كراتين رمضان السنوية</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 4: Square (1x1) -->
+          <div class="bento-card bento-square reveal reveal-up"
+            onclick="window.open('achievement.html?id=conference', '_self')" style="--delay:240ms">
+            <div class="bento-bg">
+              <img alt="Conference" loading="lazy" src="events/official_archive/ha-2023-2024-01_122.jpg" />
+              <div class="bento-overlay bento-overlay--teal"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--teal">حدث تاريخي</div>
+              <div class="bento-text">
+                <div class="trophy-year">2023</div>
+                <h3 class="trophy-title">المؤتمر العلمي الأول</h3>
+                <p class="trophy-sub">تنظيم المؤتمر لكلية الهندسة</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 5: Wide (2x1) -->
+          <div class="bento-card bento-wide reveal reveal-up"
+            onclick="window.open('achievement.html?id=employment', '_self')" style="--delay:320ms">
+            <div class="bento-bg">
+              <img alt="Employment" loading="lazy" src="/events/Reception day  2026/IMG-20250921-WA0007.jpg" />
+              <div class="bento-overlay bento-overlay--gold"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--gold">ريادة توظيفية</div>
+              <div class="bento-text">
+                <div class="trophy-year">2023</div>
+                <h3 class="trophy-title">ملتقى التوظيف الأول</h3>
+                <p class="trophy-sub">تنظيم أول ملتقى توظيفي وطني بكلية الهندسة بمشاركة كبرى الشركات</p>
+              </div>
+            </div>
+          </div>
+          <!-- Card 6: Wide (2x1) -->
+          <div class="bento-card bento-wide reveal reveal-up"
+            onclick="window.open('achievement.html?id=train', '_self')" style="--delay:400ms">
+            <div class="bento-bg">
+              <img alt="Train" loading="lazy"
+                src="events/official_archive/ha-2025-03_571186832_803302242508280_2062124213796972903_n-300x215.jpg" />
+              <div class="bento-overlay bento-overlay--teal"></div>
+            </div>
+            <div class="bento-content">
+              <div class="trophy-ribbon trophy-ribbon--teal">تمثيل وطني</div>
+              <div class="bento-text">
+                <div class="trophy-year">قطار الشباب</div>
+                <h3 class="trophy-title">قطار شباب وزارة الشباب</h3>
+                <p class="trophy-sub">تمثيل الجامعة في رحلة قطار الشباب للأقصر وأسوان</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         THE 4 ACTIVITY PILLARS
+         ========================================================================== -->
+    <section class="pillars-section" id="pillars">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="pillars.tag">محاور الأنشطة</div>
+          <h2 class="section-title" data-i18n="pillars.title">أربعة أركان تصنع الفارق</h2>
+          <p class="section-subtitle" data-i18n="pillars.subtitle">
+            تتنوع أنشطة سفراء حورس لتغطي كافة جوانب الحياة الطلابية والمسؤولية المجتمعية
+          </p>
+        </div>
+        <div class="pillars-grid">
+          <!-- Pillar 1: Charity -->
+          <div class="glass-card pillar-card reveal reveal-up" data-tilt="" style="--delay:0ms">
+            <div class="pillar-media">
+              <img alt="Ramadan Charity Convoy" src="events/official_archive/ha-2020-2021-02_17.jpg" />
+            </div>
+            <div class="pillar-content">
+              <span class="pillar-badge pillar-badge-charity" data-i18n="pillar1.badge">العمل الخيري والمجتمعي</span>
+              <h3 class="pillar-title" data-i18n="pillar1.title">سفراء الخير والتكافل الإنساني</h3>
+              <p class="pillar-desc" data-i18n="pillar1.desc">
+                مبادرات مستمرة لإدخال السرور على العاملين بالجامعة والأسر المتعففة بمحافظة دمياط ومحيطها، بالإضافة إلى
+                دعم القوافل الإغاثية.
+              </p>
+              <ul class="pillar-highlights">
+                <li data-i18n="pillar1.point1">توزيع كراتين وشنط رمضان السنوية (2021 - 2025)</li>
+                <li data-i18n="pillar1.point2">تنظيم المعارض الخيرية الأول والثاني للملابس</li>
+                <li data-i18n="pillar1.point3">المشاركة مع جمعية رسالة في تعبئة إغاثات أهالينا في غزة</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Pillar 2: Academic & Conferences -->
+          <div class="glass-card pillar-card reveal reveal-up" data-tilt="" style="--delay:100ms">
+            <div class="pillar-media">
+              <img alt="Engineering Academic Conference" src="events/official_archive/ha-2023-2024-01_121.jpg" />
+            </div>
+            <div class="pillar-content">
+              <span class="pillar-badge pillar-badge-academic" data-i18n="pillar2.badge">الملتقيات والمؤتمرات
+                الأكاديمية</span>
+              <h3 class="pillar-title" data-i18n="pillar2.title">ريادة التنظيم الأكاديمي والهندسي</h3>
+              <p class="pillar-desc" data-i18n="pillar2.desc">
+                الذراع التنظيمي الأبرز لكلية الهندسة في إدارة الملتقيات التوظيفية والمؤتمرات العلمية الدولية وحفلات
+                التكريم.
+              </p>
+              <ul class="pillar-highlights">
+                <li data-i18n="pillar2.point1">تنظيم ورعاية المؤتمر التوظيفي والمؤتمر العلمي الأول لكلية الهندسة</li>
+                <li data-i18n="pillar2.point2">تنظيم يوم الهندسة التعريفي بالأقسام والمعامل للطلاب الجدد</li>
+                <li data-i18n="pillar2.point3">تنظيم ندوات التخصصات الهندسية (اتصالات، عمارة، ميكاترونكس)</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Pillar 3: Campus Entertainment -->
+          <div class="glass-card pillar-card reveal reveal-up" data-tilt="" style="--delay:200ms">
+            <div class="pillar-media">
+              <img alt="Boom Boom Day Festival" src="events/official_archive/ha-2021-2022-05_54.jpg" />
+            </div>
+            <div class="pillar-content">
+              <span class="pillar-badge pillar-badge-campus" data-i18n="pillar3.badge">الأنشطة الترفيهية وبناء
+                الفريق</span>
+              <h3 class="pillar-title" data-i18n="pillar3.title">حياة جامعية استثنائية وبوم بوم داي</h3>
+              <p class="pillar-desc" data-i18n="pillar3.desc">
+                صناعة البهجة ونشر الطاقة الإيجابية داخل الحرم الجامعي عبر أضخم الفعاليات الترفيهية والتزيين الموسمي.
+              </p>
+              <ul class="pillar-highlights">
+                <li data-i18n="pillar3.point1">تنظيم مهرجان بوم بوم داي (Boom Boom Day) لعدة أيام متتالية</li>
+                <li data-i18n="pillar3.point2">اليوم الترفيهي السنوي مع بوفيهات وحفلات تكريم كبرى</li>
+                <li data-i18n="pillar3.point3">تزيين مبنى كلية الهندسة بأجواء رمضانية ومواقع تصوير احترافية</li>
+              </ul>
+            </div>
+          </div>
+          <!-- Pillar 4: Expeditions & Trips -->
+          <div class="glass-card pillar-card reveal reveal-up" data-tilt="" style="--delay:300ms">
+            <div class="pillar-media">
+              <img alt="Student Expeditions &amp; Trips"
+                src="events/official_archive/ha-2025-03_571186832_803302242508280_2062124213796972903_n-300x215.jpg" />
+            </div>
+            <div class="pillar-content">
+              <span class="pillar-badge pillar-badge-trips" data-i18n="pillar4.badge">الرحلات والاستكشاف</span>
+              <h3 class="pillar-title" data-i18n="pillar4.title">رحلات استكشافية ومغامرات في ربوع مصر</h3>
+              <p class="pillar-desc" data-i18n="pillar4.desc">
+                رحلات دورية تمزج بين الاستكشاف، التخييم، والتواصل الأخوي وتوسيع مدارك الطلاب خارج قاعات المحاضرات.
+              </p>
+              <ul class="pillar-highlights">
+                <li data-i18n="pillar4.point1">تخييم محمية وادي دجلة والمغامرات الجبلية</li>
+                <li data-i18n="pillar4.point2">رحلات العين السخنة، الإسكندرية، والقاهرة والفيوم</li>
+                <li data-i18n="pillar4.point3">المشاركة في قطار الشباب للأقصر وأسوان مع وزارة الشباب والرياضة</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         MILESTONES TIMELINE
+         ========================================================================== -->
+    <section class="timeline-section" id="timeline">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="timeline.tag">المسيرة والتاريخ</div>
+          <h2 class="section-title" data-i18n="timeline.title">محطات فارقة في تاريخ سفراء حورس</h2>
+          <p class="section-subtitle" data-i18n="timeline.subtitle">
+            كيف تحولت الفكرة من مبادرة طلابية إلى الأسرة رقم #1 بجامعة حورس
+          </p>
+        </div>
+        <div class="timeline-track">
+          <!-- 2020 Node -->
+          <div class="timeline-node reveal reveal-up" style="--delay:0ms">
+            <div class="timeline-point">2020</div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-year" data-i18n="timeline.t2020_year">ديسمبر 2020</span>
+              <h3 class="timeline-title" data-i18n="timeline.t2020_title">التأسيس والانطلاقة الرسمية</h3>
+              <p class="timeline-text" data-i18n="timeline.t2020_desc">
+                اعتماد تسجيل أسرة سفراء حورس رسمياً بكلية الهندسة بريادة د. محمد كمال عبد السلام وبدء بناء اللجان
+                الطلابية.
+              </p>
+            </div>
+          </div>
+          <!-- 2021 Node -->
+          <div class="timeline-node reveal reveal-up" style="--delay:100ms">
+            <div class="timeline-point">2021</div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-year" data-i18n="timeline.t2021_year">رمضان 2021 - 2022</span>
+              <h3 class="timeline-title" data-i18n="timeline.t2021_title">أول حدث خيري ويوم الهندسة</h3>
+              <p class="timeline-text" data-i18n="timeline.t2021_desc">
+                إطلاق أول حملة كراتين رمضان بالجامعة والمشاركة الفاعلة في تنظيم يوم الهندسة واستقبال دفعة مهندسي
+                المستقبل.
+              </p>
+            </div>
+          </div>
+          <!-- 2022 Node -->
+          <div class="timeline-node reveal reveal-up" style="--delay:200ms">
+            <div class="timeline-point">2022</div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-year" data-i18n="timeline.t2022_year">العام الأكاديمي 2022</span>
+              <h3 class="timeline-title" data-i18n="timeline.t2022_title">التوسع والشراكات الدولية</h3>
+              <p class="timeline-text" data-i18n="timeline.t2022_desc">
+                التعاون مع منظمة آيزيك دمياط (AIESEC Damietta) وتنظيم الفعاليات التعريفية لأقسام الكلية ومعارض الملابس
+                الخيرية.
+              </p>
+            </div>
+          </div>
+          <!-- 2023 Node -->
+          <div class="timeline-node reveal reveal-up" style="--delay:300ms">
+            <div class="timeline-point">2023</div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-year" data-i18n="timeline.t2023_year">أكتوبر 2023</span>
+              <h3 class="timeline-title" data-i18n="timeline.t2023_title">المركز الأول وتنظيم مؤتمر التوظيف</h3>
+              <p class="timeline-text" data-i18n="timeline.t2023_desc">
+                التتويج بالمركز الأول على مستوى جامعة حورس، وتنظيم اليوم السنوي ومؤتمر التوظيف والمؤتمر العلمي الأول
+                لكلية الهندسة.
+              </p>
+            </div>
+          </div>
+          <!-- 2024-2025 Node -->
+          <div class="timeline-node reveal reveal-up" style="--delay:400ms">
+            <div class="timeline-point">2025</div>
+            <div class="glass-card timeline-content">
+              <span class="timeline-year" data-i18n="timeline.t2024_year">2024 - 2025+</span>
+              <h3 class="timeline-title" data-i18n="timeline.t2024_title">توسيع قوافل الإغاثة والاستدامة</h3>
+              <p class="timeline-text" data-i18n="timeline.t2024_desc">
+                المشاركة في إغاثة غزة مع جمعية رسالة، واستمرار حملات رمضان للعام الخامس على التوالي واستقبال الدفعات
+                الجديدة.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         FILTERABLE MEDIA GALLERY
+         ========================================================================== -->
+    <section class="gallery-section scattered-gallery-section" id="gallery"
+      style="padding: 100px 0; overflow: hidden; position: relative;">
+      <div class="container" style="position: relative; z-index: 10; pointer-events: none;">
+        <div class="section-header" style="text-align: center; margin-bottom: 20px;">
+          <div class="section-tag" data-i18n="gallery.tag"
+            style="display: inline-block; padding: 6px 16px; border: 1px solid rgba(241, 90, 36, 0.4); border-radius: 20px; font-size: 0.85rem; color: var(--ha-orange); margin-bottom: 15px; background: rgba(241, 90, 36, 0.05);">
+            المعرض التوثيقي</div>
+          <h2 class="section-title" data-i18n="gallery.title"
+            style="font-size: 2.8rem; font-weight: 900; color: #fff; margin-bottom: 10px; text-shadow: 0 4px 20px rgba(241, 90, 36, 0.4);">
+            لحظات وذكريات لا تُنسى</h2>
+          <p class="section-subtitle" data-i18n="gallery.subtitle"
+            style="font-size: 1.1rem; color: var(--text-muted); max-width: 600px; margin: 0 auto;">
+            لقطات حية من بطولات وفعاليات وتكريمات أسرة سفراء حورس
+          </p>
+        </div>
+      </div>
+      <!-- 3D Globe Layout -->
+      <div id="home-globe-container"
+        style="position: relative; width: 100vw; height: 80vh; max-height: 800px; margin: 0 auto; perspective: 1200px; cursor: grab; overflow: hidden;">
+        <div id="home-globe"
+          style="position: absolute; width: 100%; height: 100%; transform-style: preserve-3d; display: flex; align-items: center; justify-content: center;">
+          <!-- Images injected here -->
+        </div>
+        <div
+          style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 0.9rem; pointer-events: none; z-index: 100;">
+          اسحب للتدوير | Drag to spin
+        </div>
+      </div>
+      <!-- Creative CTA Button -->
+      <div style="text-align: center; margin-top: -30px; position: relative; z-index: 50;">
+        <a class="btn-glowing-pill" href="gallery.html">
+          <span class="pill-text" data-i18n="gallery.cta">لمشاهدة المزيد من الصور، تفضل بزيارة المعرض</span>
+          <span class="pill-icon"></span>
+        </a>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         LEADERSHIP & ADVISORY BOARD — TABBED PROFESSIONAL SECTION
+         ========================================================================== -->
+    <section class="leadership-section" id="leadership">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="leadership.tag">الهيكل والإشراف</div>
+          <h2 class="section-title" data-i18n="leadership.title">قيادة مخلصة وروح عمل جماعي</h2>
+          <p class="section-subtitle" data-i18n="leadership.subtitle">
+            نخبة من أعضاء هيئة التدريس والهيئة المعاونة والقيادات الطلابية الطموحة
+          </p>
+        </div>
+        <!-- Leadership Tabs Navigation -->
+        <div aria-label="Leadership Categories" class="leadership-tabs-nav" role="tablist">
+          <button aria-controls="tab-supervisor" aria-selected="true" class="leader-tab-btn active"
+            data-tab="supervisor" id="tabBtn-supervisor" role="tab">
+            <span class="tab-icon"></span>
+            <span data-i18n="ltab.supervisor">المشرف الرئيسي</span>
+          </button><button aria-controls="tab-asst" aria-selected="false" class="leader-tab-btn" data-tab="asst"
+            id="tabBtn-asst" role="tab">
+            <span class="tab-icon"></span>
+            <span data-i18n="ltab.asst">المشرفون المساعدون</span>
+          </button><button aria-controls="tab-head" aria-selected="false" class="leader-tab-btn" data-tab="head"
+            id="tabBtn-head" role="tab">
+            <span class="tab-icon"></span>
+            <span data-i18n="ltab.head">رئيس الأسرة</span>
+          </button>
+        </div>
+        <!-- TAB 1: HIGH BOARD (الهيكل الإداري) -->
+        <div aria-labelledby="tabBtn-head" class="leader-tab-panel" id="tab-head" role="tabpanel">
+          <div class="orbit-system">
+            <svg id="orbit-svg"
+              style="position:absolute; top:0; left:0; width:100%; height:100%; pointer-events:none; z-index:0;">
+              <!-- Lines will be dynamically injected here -->
+            </svg>
+            <div class="orbit-ring" style="width: 360px; height: 360px;"></div>
+            <div class="orbit-ring" style="width: 680px; height: 680px;"></div>
+            <div class="orbit-ring" style="width: 1000px; height: 1000px;"></div>
+            <div class="orbit-node center-node" id="node_Anas_Elzhairy"
+              style="transform: translate(calc(-50% + 0.0px), calc(-50% + 0.0px));">
+              <div class="orbit-card" data-dept="Electronics and Communications" data-email="1221290@horus.edu.eg"
+                data-img="/board/IMG_5440_1221290@horus.edu.eg.jpeg" data-name="Anas Elzhairy" data-role="Team leader "
+                onclick="openTerminal(this)">
+                <img alt="Anas Elzhairy" class="orbit-img" src="/board/IMG_5440_1221290@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Anas Elzhairy</h3>
+                  <div class="orbit-role">Team leader </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Mohamed_Mansour"
+              style="transform: translate(calc(-50% + 1.1021821192326179e-14px), calc(-50% + -180.0px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1221494@horus.edu.eg"
+                data-img="/board/IMG_3783_1221494@horus.edu.eg.jpeg" data-name="Mohamed Mansour" data-role="Vice Head "
+                onclick="openTerminal(this)">
+                <img alt="Mohamed Mansour" class="orbit-img" src="/board/IMG_3783_1221494@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Mohamed Mansour</h3>
+                  <div class="orbit-role">Vice Head </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Saad_Elbayyar"
+              style="transform: translate(calc(-50% + 155.88457268119896px), calc(-50% + 89.99999999999999px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1201197@horus.edu.eg"
+                data-img="/board/9faedcdc-db86-4477-84be-fbb39c7084a6_1201197@horus.edu.eg.jpeg"
+                data-name="Saad Elbayyar" data-role="Consultant " onclick="openTerminal(this)">
+                <img alt="Saad Elbayyar" class="orbit-img"
+                  src="/board/9faedcdc-db86-4477-84be-fbb39c7084a6_1201197@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Saad Elbayyar</h3>
+                  <div class="orbit-role">Consultant </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Mokhtar_Mohamed_Hemida"
+              style="transform: translate(calc(-50% + -155.88457268119896px), calc(-50% + 89.99999999999999px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1221484@horus.edu.eg"
+                data-img="/board/photo_high_quality_under_100MB_1221484@horus.edu.eg.jpg"
+                data-name="Mokhtar Mohamed Hemida" data-role="Vice Head" onclick="openTerminal(this)">
+                <img alt="Mokhtar Mohamed Hemida" class="orbit-img"
+                  src="/board/photo_high_quality_under_100MB_1221484@horus.edu.eg.jpg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Mokhtar Mohamed Hemida</h3>
+                  <div class="orbit-role">Vice Head</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Ziad_Shiref"
+              style="transform: translate(calc(-50% + 2.0818995585505004e-14px), calc(-50% + -340.0px));">
+              <div class="orbit-card" data-dept="Civil" data-email="1221123@horus.edu.eg"
+                data-img="/board/Picsart_24-12-11_16-43-49-810_1221123@horus.edu.eg.jpeg" data-name="Ziad Shiref"
+                data-role="Head of media " onclick="openTerminal(this)">
+                <img alt="Ziad Shiref" class="orbit-img"
+                  src="/board/Picsart_24-12-11_16-43-49-810_1221123@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Ziad Shiref</h3>
+                  <div class="orbit-role">Head of media </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Mohamed_Elawdy"
+              style="transform: translate(calc(-50% + 323.3592155403522px), calc(-50% + -105.06577808748212px));">
+              <div class="orbit-card" data-dept="Civil" data-email="1221479@.Horus.edu.eg "
+                data-img="/board/IMG_5154_1221479@horus.edu.eg.jpeg" data-name="Mohamed Elawdy" data-role="Head Pr "
+                onclick="openTerminal(this)">
+                <img alt="Mohamed Elawdy" class="orbit-img" src="/board/IMG_5154_1221479@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Mohamed Elawdy</h3>
+                  <div class="orbit-role">Head Pr </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Ammar_Wael"
+              style="transform: translate(calc(-50% + 199.84698577944087px), calc(-50% + 275.06577808748216px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1221100@horus.edu.eg"
+                data-img="/board/IMG_6270_1221100@horus.edu.eg.jpeg" data-name="Ammar Wael" data-role="Head HR"
+                onclick="openTerminal(this)">
+                <img alt="Ammar Wael" class="orbit-img" src="/board/IMG_6270_1221100@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Ammar Wael</h3>
+                  <div class="orbit-role">Head HR</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Hams_Gehad"
+              style="transform: translate(calc(-50% + -199.84698577944084px), calc(-50% + 275.06577808748216px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1241283@horus.edu.eg"
+                data-img="/board/IMG_1779_1241283@horus.edu.eg.jpeg" data-name="Hams Gehad"
+                data-role="Vice Head Implementation" onclick="openTerminal(this)">
+                <img alt="Hams Gehad" class="orbit-img" src="/board/IMG_1779_1241283@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Hams Gehad</h3>
+                  <div class="orbit-role">Vice Head Implementation</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Dina_Shoukat"
+              style="transform: translate(calc(-50% + -323.35921554035224px), calc(-50% + -105.06577808748207px));">
+              <div class="orbit-card" data-dept="Electronics and Communications" data-email="1231489@horus.edu.eg"
+                data-img="/board/IMG_2747_1231489@horus.edu.eg.jpeg" data-name="Dina Shoukat"
+                data-role="Head sector el planning " onclick="openTerminal(this)">
+                <img alt="Dina Shoukat" class="orbit-img" src="/board/IMG_2747_1231489@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Dina Shoukat</h3>
+                  <div class="orbit-role">Head sector el planning </div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Malak_Sheta"
+              style="transform: translate(calc(-50% + 353.5533905932738px), calc(-50% + -353.5533905932737px));">
+              <div class="orbit-card" data-dept="Computer engineering and control " data-email="1241448@horus.edu.eg"
+                data-img="/board/0F342BCD-FE24-4744-9AA3-5A9766C275B5_1241448@horus.edu.eg.jpeg" data-name="Malak Sheta"
+                data-role="social media sector vice head" onclick="openTerminal(this)">
+                <img alt="Malak Sheta" class="orbit-img"
+                  src="/board/0F342BCD-FE24-4744-9AA3-5A9766C275B5_1241448@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Malak Sheta</h3>
+                  <div class="orbit-role">social media sector vice head</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Hager_Ahmed"
+              style="transform: translate(calc(-50% + 353.5533905932738px), calc(-50% + 353.5533905932737px));">
+              <div class="orbit-card" data-dept="Computer engineering and control " data-email="1241026@horus.edu.eg"
+                data-img="/board/IMG-20260816-WA0046_1241026@horus.edu.eg.jpg" data-name="Hager Ahmed"
+                data-role="social media sector vice head" onclick="openTerminal(this)">
+                <img alt="Hager Ahmed" class="orbit-img" src="/board/IMG-20260816-WA0046_1241026@horus.edu.eg.jpg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Hager Ahmed</h3>
+                  <div class="orbit-role">social media sector vice head</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Jana_Abdelrahman_Hussein"
+              style="transform: translate(calc(-50% + -353.5533905932737px), calc(-50% + 353.5533905932738px));">
+              <div class="orbit-card" data-dept="Mechanical Mechatronics" data-email="1241263@horus.edu.eg"
+                data-img="/board/WhatsApp Image 2026-09-15 at 16.21.33_1241263@horus.edu.eg.jpeg"
+                data-name="Jana Abdelrahman Hussein" data-role="public relations (PR)" onclick="openTerminal(this)">
+                <img alt="Jana Abdelrahman Hussein" class="orbit-img"
+                  src="/board/WhatsApp Image 2026-09-15 at 16.21.33_1241263@horus.edu.eg.jpeg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Jana Abdelrahman Hussein</h3>
+                  <div class="orbit-role">public relations (PR)</div>
+                </div>
+              </div>
+            </div>
+            <div class="orbit-node" id="node_Mariam_Zakaria"
+              style="transform: translate(calc(-50% + -353.55339059327383px), calc(-50% + -353.5533905932737px));">
+              <div class="orbit-card" data-dept="Biomedical" data-email="1241498@horus.edu.eg"
+                data-img="/board/Snapchat-343379552(1)_1241498@horus.edu.eg.jpg" data-name="Mariam Zakaria"
+                data-role="Vice head  sector implementation " onclick="openTerminal(this)">
+                <img alt="Mariam Zakaria" class="orbit-img"
+                  src="/board/Snapchat-343379552(1)_1241498@horus.edu.eg.jpg" />
+                <div class="orbit-info">
+                  <h3 class="orbit-name">Mariam Zakaria</h3>
+                  <div class="orbit-role">Vice head sector implementation </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- TAB 2: MAIN SUPERVISOR (المشرف الرئيسي) -->
+        <div aria-labelledby="tabBtn-supervisor" class="leader-tab-panel active" id="tab-supervisor" role="tabpanel">
+          <div class="cinematic-sup-card">
+            <div class="cinematic-glass-panel">
+              <div class="cin-badge">المشرف الرئيسي / Supervisor</div>
+              <h2 class="cin-name">Assoc. Prof. Dr. Mohamed Kamal</h2>
+              <div class="cin-roles">
+                <div class="cin-role-item">
+                  <i>🎓</i>
+                  <span>وكيل كلية الهندسة لخدمة المجتمع و شئون البيئة</span>
+                </div>
+                <div class="cin-role-item">
+                  <i>🤖</i>
+                  <span>رئيس قسم الذكاء الاصطناعي</span>
+                </div>
+                <div class="cin-role-item">
+                  <i>💻</i>
+                  <span>مدير مكتب الخدمات الالكترونية والابداع العلمي (ESSIC)</span>
+                </div>
+              </div>
+              <div class="cin-email">
+                <i>✉️</i>
+                <span>mkhassan@horus.edu.eg</span>
+              </div>
+              <div class="cin-quote-box">
+                نحن في كلية الهندسة نؤمن بأن المهندس الحقيقي لا يكتفي بالتفوق الأكاديمي، بل يمتد أثره إلى بناء مجتمعه.
+                أسرة سفراء حورس هي المنصة المثالية لصناعة هؤلاء القادة والمبدعين. فخورون بجهودكم المستمرة في رفع مستوى
+                النشاط الطلابي وخدمة الجامعة.
+              </div>
+            </div>
+            <div class="cinematic-photo-section">
+              <img alt="Assoc. Prof. Dr. Mohamed Kamal" src="board/dr_kamal.jpg" />
+            </div>
+          </div>
+        </div>
+        <!-- TAB 3: ASSISTANT SUPERVISORS / المشرفون المساعدون -->
+        <div aria-labelledby="tabBtn-asst" class="leader-tab-panel" id="tab-asst" role="tabpanel">
+          <div class="portrait-gallery-grid">
+            <!-- Co.Advisor 1 -->
+            <div class="portrait-card">
+              <img alt="Eng. Kareem Elmslmany" src="/board/eng%20kareem.png" />
+              <div class="portrait-inner-shadow"></div>
+              <div class="portrait-label-persistent">Eng. Kareem</div>
+              <div class="portrait-overlay"></div>
+              <div class="portrait-content">
+                <div class="portrait-badge">Co.Advisor</div>
+                <h3 class="portrait-name">Eng. Kareem Elmslmany</h3>
+                <p class="portrait-name-ar">م. كريم المسلماني</p>
+              </div>
+            </div>
+            <!-- Co.Advisor 2 -->
+            <div class="portrait-card">
+              <img alt="Eng. Mona Azmi" src="/board/eng%20mona.png" />
+              <div class="portrait-inner-shadow"></div>
+              <div class="portrait-label-persistent">Eng. Mona</div>
+              <div class="portrait-overlay"></div>
+              <div class="portrait-content">
+                <div class="portrait-badge">Co.Advisor</div>
+                <h3 class="portrait-name">Eng. Mona Azmi</h3>
+                <p class="portrait-name-ar">م. منى عزمي</p>
+              </div>
+            </div>
+            <!-- Co.Advisor 3 -->
+            <div class="portrait-card">
+              <img alt="Eng. Noha Asker" src="/board/eng%20noha.png" />
+              <div class="portrait-inner-shadow"></div>
+              <div class="portrait-label-persistent">Eng. Noha</div>
+              <div class="portrait-overlay"></div>
+              <div class="portrait-content">
+                <div class="portrait-badge">Co.Advisor</div>
+                <h3 class="portrait-name">Eng. Noha Asker</h3>
+                <p class="portrait-name-ar">م. نهى عسكر</p>
+              </div>
+            </div>
+            <!-- Co.Advisor 4 -->
+            <div class="portrait-card">
+              <img alt="Eng. Hadeer Ahmed" src="/board/eng%20hadeer.png" />
+              <div class="portrait-inner-shadow"></div>
+              <div class="portrait-label-persistent">Eng. Hadeer</div>
+              <div class="portrait-overlay"></div>
+              <div class="portrait-content">
+                <div class="portrait-badge">Co.Advisor</div>
+                <h3 class="portrait-name">Eng. Hadeer Ahmed</h3>
+                <p class="portrait-name-ar">م. هدير أحمد</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         ALUMNI SUCCESS & TESTIMONIALS CAROUSEL
+         ========================================================================== -->
+    <!-- ==========================================================================
+         FOUNDERS SECTION (Replaced Alumni)
+         ========================================================================== -->
+    <section class="alumni-section" id="founders">
+      <div class="container">
+        <div class="section-header reveal reveal-up">
+          <div class="section-tag" data-i18n="founders.tag">المؤسسون</div>
+          <h2 class="section-title" data-i18n="founders.title">الرعيل الأول وصنّاع البداية</h2>
+          <p class="section-subtitle" data-i18n="founders.subtitle">قادة وأعضاء أسسوا أسرة سفراء حورس عام 2020 لتبقى
+            منارة للتميز والعمل الطلابي.</p>
+        </div>
+        <div class="alumni-carousel reveal reveal-up" style="--delay: 100ms;">
+          <!-- Founder 1 -->
+          <div class="glass-card alumni-card" data-tilt="">
+            <div class="alumni-avatar">
+              <img src="board/hossam.JPG" alt="م. حسام البدري" loading="lazy"
+                onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/hossam.JPG';}">
+            </div>
+            <div class="alumni-info">
+              <h3 class="alumni-name">م. حسام البدري</h3>
+              <p class="alumni-job" data-i18n="founders.role1">مقرر الأسرة المؤسس</p>
+            </div>
+            <blockquote class="alumni-quote" data-i18n="founders.quote1">
+              "وضعنا اللبنة الأولى لأسرة سفراء حورس لتكون أكثر من مجرد فريق طلابي، لتكون عائلة متكاتفة تسعى للتطوير
+              والتميز في كلية الهندسة."
+            </blockquote>
+          </div>
+          <!-- Founder 2 -->
+          <div class="glass-card alumni-card" data-tilt="">
+            <div class="alumni-avatar">
+              <img src="board/hassan.JPG" alt="م. حسن يوسف" loading="lazy"
+                onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/hassan.JPG';}">
+            </div>
+            <div class="alumni-info">
+              <h3 class="alumni-name">م. حسن يوسف</h3>
+              <p class="alumni-job" data-i18n="founders.role2">مقرر مساعد الأسرة المؤسس</p>
+            </div>
+            <blockquote class="alumni-quote" data-i18n="founders.quote2">
+              "كنا نؤمن دائمًا أن العمل الجماعي المنظم هو السبيل الوحيد لترك أثر حقيقي في مجتمعنا الجامعي، وهذا ما سعينا
+              لتحقيقه."
+            </blockquote>
+          </div>
+        </div>
+        <!-- Founding Members List -->
+        <div class="founders-list-wrap reveal reveal-up" style="--delay: 200ms; margin-top: 40px; text-align: center;">
+          <h3 class="founders-list-title" data-i18n="founders.members_title"
+            style="color: var(--ha-orange); margin-bottom: 20px;">الأعضاء المؤسسون</h3>
+          <div class="founders-grid" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              عبد الرحمن أبو القاسم</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              عبد الغفار الموافي</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              أحمد النجار</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              محمد السيد دره</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              عبد الله الحنفي</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              كريم ياسر عبد الغني</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              منة الله عثمان</span>
+            <span class="founder-badge glass-card" style="padding: 10px 20px; border-radius: 50px; font-weight: 700;">م.
+              محمد أشرف النجار</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         MEMBER SPOTLIGHT
+         ========================================================================== -->
+    <section class="spotlight-section" id="spotlight">
+      <div class="container">
+        <div class="section-header reveal reveal-up">
+          <div class="section-tag" data-i18n="spot.tag">✨ نجم الشهر</div>
+          <h2 class="section-title" data-i18n="spot.title">سفير يستحق التقدير</h2>
+          <p class="section-subtitle" data-i18n="spot.subtitle">نضيء الضوء على أحد أعضائنا المتميزين ممن يجسّدون روح
+            سفراء حورس</p>
+        </div>
+        <div class="spotlight-grid reveal reveal-up" style="--delay:100ms">
+          <div class="glass-card spotlight-card" data-tilt="">
+            <div class="spotlight-badge-wrap">
+              <span class="spotlight-badge" data-i18n="spot.badge">نجم الشهر ⭐</span>
+            </div>
+            <div class="spotlight-photo-wrap">
+              <div class="spotlight-photo">
+                <img src="board/yasser%20fayed.JPG" alt="Yasser Fayed" loading="lazy"
+                  onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/yasser%20fayed.JPG';}">
+              </div>
+              <div class="spotlight-glow"></div>
+            </div>
+            <div class="spotlight-info">
+              <h3 class="spotlight-name">Yasser Fayed</h3>
+              <p class="spotlight-role" data-i18n="spot.role">Team Leader — أسرة سفراء حورس</p>
+              <blockquote class="spotlight-quote" data-i18n="spot.quote">
+                "القيادة الحقيقية ليست في اتخاذ القرارات، بل في تمكين فريقك من تحقيق المستحيل معاً."
+              </blockquote>
+            </div>
+            <div class="spotlight-social">
+              <a class="spot-social-link" href="https://www.instagram.com/horus_ambassadors" rel="noopener"
+                target="_blank">📸 Instagram</a>
+              <a class="spot-social-link" href="https://www.facebook.com/HorusAmbassadors" rel="noopener"
+                target="_blank">📘 Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         HISTORICAL HALL OF FAME (لوحة الشرف)
+         ========================================================================== -->
+    <section class="fame-section" id="fame">
+      <div class="container">
+        <div class="section-header reveal reveal-up">
+          <div class="section-tag" data-i18n="fame.tag">لوحة الشرف</div>
+          <h2 class="section-title" data-i18n="fame.title">قادة صنعوا التاريخ</h2>
+          <p class="section-subtitle" data-i18n="fame.subtitle">السجلات التاريخية للهياكل الإدارية التي قادت أسرة سفراء
+            حورس عبر السنوات الماضية.</p>
+        </div>
+        <div class="fame-container reveal reveal-up" style="--delay: 100ms;">
+          <!-- Years Tabs -->
+          <div class="fame-tabs" role="tablist">
+            <button aria-selected="true" class="fame-tab-btn active" data-year="2023" role="tab">2023 - 2024</button>
+            <button aria-selected="false" class="fame-tab-btn" data-year="2020" role="tab">2020 - 2023</button>
+          </div>
+          <!-- 2023 - 2024 Panel -->
+          <div class="fame-panel active" id="fame-2023" role="tabpanel">
+            <div class="fame-grid">
+              <!-- Head: Yasser Fayed -->
+              <div class="glass-card fame-card fame-card--head" data-tilt="">
+                <div class="fame-photo">
+                  <img src="board/yasser%20fayed.JPG" alt="ياسر فايد" loading="lazy"
+                    onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/yasser%20fayed.JPG';}">
+                </div>
+                <div class="fame-info">
+                  <span class="fame-role">مقرر الأسرة (2023 - 2024)</span>
+                  <h4 class="fame-name">ياسر فايد</h4>
+                </div>
+              </div>
+              <!-- Vice: Ahmad Badrawy -->
+              <div class="glass-card fame-card fame-card--vice" data-tilt="">
+                <div class="fame-photo fame-photo--teal">
+                  <img src="board/badrawy.JPG" alt="أحمد البدراوي" loading="lazy"
+                    onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/badrawy.JPG';}">
+                </div>
+                <div class="fame-info">
+                  <span class="fame-role">مقرر مساعد الأسرة (2023 - 2024)</span>
+                  <h4 class="fame-name">أحمد البدراوي</h4>
+                </div>
+              </div>
+            </div>
+            <p class="fame-note">📌 قادة إدارة الصف الطلابي واللجان التنظيمية والإعلامية لعام 2023 - 2024.</p>
+          </div>
+          <!-- 2020 - 2023 Panel -->
+          <div class="fame-panel" id="fame-2020" role="tabpanel">
+            <div class="fame-grid">
+              <!-- Head: Hossam Elbadry -->
+              <div class="glass-card fame-card fame-card--head" data-tilt="">
+                <div class="fame-photo">
+                  <img src="board/hossam.JPG" alt="م. حسام البدري" loading="lazy"
+                    onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/hossam.JPG';}">
+                </div>
+                <div class="fame-info">
+                  <span class="fame-role">مقرر الأسرة المؤسس (2020 - 2023)</span>
+                  <h4 class="fame-name">م. حسام البدري</h4>
+                </div>
+              </div>
+              <!-- Vice: Hassan Youssef -->
+              <div class="glass-card fame-card fame-card--vice" data-tilt="">
+                <div class="fame-photo fame-photo--teal">
+                  <img src="board/hassan.JPG" alt="م. حسن يوسف" loading="lazy"
+                    onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src='/board/hassan.JPG';}">
+                </div>
+                <div class="fame-info">
+                  <span class="fame-role">مقرر مساعد الأسرة المؤسس (2020 - 2023)</span>
+                  <h4 class="fame-name">م. حسن يوسف</h4>
+                </div>
+              </div>
+            </div>
+            <p class="fame-note">📌 الرعيل الأول وقادة التأسيس لأسرة سفراء حورس منذ انطلاقها عام 2020 وحتى 2023.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         CERTIFICATE DOWNLOAD SECTION
+         ========================================================================== -->
+    <!-- <section class="certs-section" id="certificates">
+<div class="container">
+<div class="section-header reveal reveal-up">
+<div class="section-tag" data-i18n="certs.tag">📜 شهاداتنا الرسمية</div>
+<h2 class="section-title" data-i18n="certs.title">شهادات تقدير واعتراف بالتميّز</h2>
+<p class="section-subtitle" data-i18n="certs.subtitle">الشهادات الرسمية الممنوحة لأسرة سفراء حورس تقديراً
+            لإسهاماتها البارزة بجامعة حورس - مصر</p>
+</div>
+<div class="certs-grid reveal reveal-up" style="--delay:100ms"> -->
+    <!-- Certificate 1 -->
+    <!-- <div class="glass-card cert-card" data-tilt="">
+<div class="cert-glow"></div>
+<div class="cert-icon-wrap">
+<span class="cert-icon">📜</span>
+</div>
+<div class="cert-body">
+<div class="cert-year">جامعة حورس - مصر</div>
+<h3 class="cert-title" data-i18n="certs.c1_title">شهادة تقدير وعرفان</h3>
+<p class="cert-desc" data-i18n="certs.c1_desc">شهادة رسمية ممنوحة من جامعة حورس - مصر تقديراً للإسهامات
+                الاستثنائية لأسرة سفراء حورس في خدمة المجتمع والأنشطة الطلابية.</p>
+<div class="cert-meta">
+<span class="cert-meta-item">🏛️ <span data-i18n="certs.issuer">جامعة حورس - مصر</span></span>
+<span class="cert-meta-item">📅 2023</span>
+</div>
+</div>
+<a class="btn btn-brand cert-download-btn" data-i18n="certs.download" download="" href="/certificates/Certificate of Appreciation Horus Ambassdors[1].pdf">
+              ⬇ تحميل الشهادة (PDF)
+            </a>
+</div>
+</div>
+</div> -->
+    </section>
+    <!-- ==========================================================================
+         NEWS / BLOG SECTION
+         ========================================================================== -->
+    <section class="news-section" id="news">
+      <div class="container">
+        <div class="section-header reveal reveal-up">
+          <div class="section-tag" data-i18n="news.tag">📰 أحدث الأخبار</div>
+          <h2 class="section-title" data-i18n="news.title">آخر أخبار وفعاليات الأسرة</h2>
+          <p class="section-subtitle" data-i18n="news.subtitle">تابع كل ما يجري في عالم سفراء حورس من أنشطة وفعاليات
+            وإنجازات</p>
+        </div>
+        <div class="news-grid">
+          <!-- News Card 1 -->
+          <div class="glass-card news-card reveal reveal-up" data-tilt="" style="--delay:0ms">
+            <div class="news-img-wrap">
+              <img alt="Reception Day 2026" class="news-img" loading="lazy"
+                src="/events/Reception day  2026/IMG-20250921-WA0007.jpg" />
+              <span class="news-category-badge" data-i18n="news.cat_events">حياة جامعية</span>
+            </div>
+            <div class="news-body">
+              <div class="news-meta">
+                <span class="news-date">📅 سبتمبر 2025</span>
+              </div>
+              <h3 class="news-title" data-i18n="news.n1_title">يوم استقبال مهندسي المستقبل — دفعة 2025</h3>
+              <p class="news-excerpt" data-i18n="news.n1_excerpt">نظّمت أسرة سفراء حورس بنجاح يوم الاستقبال والإرشاد
+                للدفعة الجديدة من طلاب كلية الهندسة، مع جولات شاملة بالمعامل والأقسام ومحاضرات تعريفية بقطاعات الأسرة.
+              </p>
+              <a class="news-read-more" data-i18n="news.read_more" href="events.html">اقرأ المزيد ←</a>
+            </div>
+            <!-- News Card 2 -->
+            <div class="glass-card news-card reveal reveal-up" data-tilt="" style="--delay:100ms">
+              <div class="news-img-wrap">
+                <img alt="Ramadan Campaign 2025" class="news-img" loading="lazy"
+                  src="/events/Ramadan 2025/WhatsApp Image 2025-03-11 at 19.11.44_0e69a1c2.jpg" />
+                <span class="news-category-badge news-cat-charity" data-i18n="news.cat_charity">العمل الخيري</span>
+              </div>
+              <div class="news-body">
+                <div class="news-meta">
+                  <span class="news-date">📅 مارس 2025</span>
+                </div>
+                <h3 class="news-title" data-i18n="news.n2_title">قافلة رمضان 2025 — خمس سنوات متتالية من العطاء</h3>
+                <p class="news-excerpt" data-i18n="news.n2_excerpt">للعام الخامس على التوالي وبدون انقطاع، أطلقت أسرة
+                  سفراء حورس حملة توزيع كراتين رمضان لصالح الأسر المحتاجة بمحافظة دمياط، في تجسيد حيّ لقيم التكافل
+                  الإنساني.</p>
+                <a class="news-read-more" data-i18n="news.read_more" href="events.html">اقرأ المزيد ←</a>
+              </div>
+              <!-- News Card 3 -->
+              <div class="glass-card news-card reveal reveal-up" data-tilt="" style="--delay:200ms">
+                <div class="news-img-wrap">
+                  <img alt="Architecture Honorary Event" class="news-img" loading="lazy"
+                    src="/events/Architectura department honorary event/IMG_9781.jpg" />
+                  <span class="news-category-badge news-cat-conf" data-i18n="news.cat_conf">مؤتمرات وتكريم</span>
+                </div>
+                <div class="news-body">
+                  <div class="news-meta">
+                    <span class="news-date">📅 2023</span>
+                  </div>
+                  <h3 class="news-title" data-i18n="news.n3_title">حفل تكريم قسم الهندسة المعمارية بحضور القيادات
+                    الجامعية</h3>
+                  <p class="news-excerpt" data-i18n="news.n3_excerpt">نظّمت الأسرة الحفل التكريمي الاستثنائي لمتميزي قسم
+                    الهندسة المعمارية بحضور قيادات الكلية والجامعة في احتفالية جمعت بين التميز الأكاديمي والفخر المؤسسي.
+                  </p>
+                  <a class="news-read-more" data-i18n="news.read_more" href="events.html">اقرأ المزيد ←</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================================================
+         RECRUITMENT APPLICATION FORM
+         ========================================================================== -->
+    <section class="apply-section" id="apply">
+      <div class="container">
+        <div class="glass-card join-card">
+          <div class="section-header" style="margin-bottom: 0;">
+            <div class="section-tag" data-i18n="apply.tag">انضم للسفراء</div>
+            <h2 class="section-title" data-i18n="apply.title">كن جزءاً من قصة نجاحنا القادمة</h2>
+            <p class="section-subtitle" data-i18n="apply.subtitle">
+              باب الانضمام مفتوح لطلبة كلية الهندسة - جامعة حورس للانضمام إلى لجان الأسرة
+            </p>
+          </div>
+          <form class="recruitment-form" id="recruitmentForm">
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label" data-i18n="apply.fullname" for="applicantName">الاسم بالكامل رباعي</label>
+                <input class="form-input" id="applicantName" required="" type="text" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="apply.studentid" for="applicantId">الرقم الجامعي (Student
+                  ID)</label>
+                <input class="form-input" id="applicantId" placeholder="e.g. 1221000" required="" type="text" />
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="apply.dept" for="applicantDept">القسم الهندسي</label>
+                <select class="form-select" id="applicantDept" required="">
+                  <option data-i18n="apply.dept_placeholder" disabled="" selected="" value="">اختر القسم الهندسي...
+                  </option>
+                  <option data-i18n="apply.dept_prep" value="prep">إعدادي هندسة</option>
+                  <option data-i18n="apply.dept_civil" value="civil">الهندسة المدنية</option>
+                  <option data-i18n="apply.dept_mecha" value="mecha">هندسة الميكاترونكس</option>
+                  <option data-i18n="apply.dept_arch" value="arch">الهندسة المعمارية</option>
+                  <option data-i18n="apply.dept_comm" value="comm">هندسة الاتصالات والحاسبات</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" data-i18n="apply.year" for="applicantYear">الفرقة الدراسية</label>
+                <select class="form-select" id="applicantYear" required="">
+                  <option data-i18n="apply.year_placeholder" disabled="" selected="" value="">اختر الفرقة الدراسية...
+                  </option>
+                  <option data-i18n="apply.year_prep" value="prep">الفرقة الإعدادية</option>
+                  <option data-i18n="apply.year_1" value="1">الفرقة الأولى</option>
+                  <option data-i18n="apply.year_2" value="2">الفرقة الثانية</option>
+                  <option data-i18n="apply.year_3" value="3">الفرقة الثالثة</option>
+                  <option data-i18n="apply.year_4" value="4">الفرقة الرابعة (تخرج)</option>
+                </select>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label" data-i18n="apply.committees">اللجنة المفضلة (يمكنك اختيار أكثر من
+                  لجنة)</label>
+                <div class="checkbox-group">
+                  <label class="checkbox-label">
+                    <input name="committee" type="checkbox" value="oc" />
+                    <span data-i18n="apply.comm_org">لجنة التنظيم والمراسم (OC)</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input name="committee" type="checkbox" value="media" />
+                    <span data-i18n="apply.comm_media">لجنة الإعلام والتصوير (Media)</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input name="committee" type="checkbox" value="charity" />
+                    <span data-i18n="apply.comm_charity">لجنة العمل الخيري والمجتمعي</span>
+                  </label>
+                  <label class="checkbox-label">
+                    <input name="committee" type="checkbox" value="pr" />
+                    <span data-i18n="apply.comm_pr">لجنة العلاقات العامة والتنسيق (PR)</span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group full-width">
+                <label class="form-label" data-i18n="apply.why" for="applicantWhy">لماذا ترغب في الانضمام لسفراء
+                  حورس؟</label>
+                <textarea class="form-textarea" data-i18n-placeholder="apply.why_placeholder" id="applicantWhy"
+                  placeholder="اكتب نبذة عن مهاراتك وشغفك لخدمة زملائك والكلية..."></textarea>
+              </div>
+              <div class="form-group full-width" style="text-align: center; margin-top: 16px;">
+                <button class="btn btn-brand" data-i18n="apply.submit"
+                  style="width: 100%; max-width: 340px; margin: 0 auto;" type="submit">
+                  إرسال طلب الانضمام
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- ==========================================================================
+       FOOTER (DUAL LOGOS & AFFILIATION)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-glow-top"></div>
+    <div class="container">
+      <!-- Top Brand Strip -->
+      <div class="footer-cta-strip">
+        <div class="footer-cta-content">
+          <div class="footer-cta-badge">
+            <span class="pulse-dot"></span>
+            <span>كلية الهندسة • جامعة حورس - مصر</span>
+          </div>
+          <h4 class="footer-cta-title">نصنع قادة الغد ونبني مستقبل الهندسة بروح العمل الجماعي</h4>
+        </div>
+        <div class="footer-cta-action">
+          <a href="#apply" class="btn btn-brand btn-sm">انضم لأسرة سفراء حورس ←</a>
+        </div>
+      </div>
+
+      <!-- Main 4-Column Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Socials -->
+        <div class="footer-brand">
+          <div class="brand-lockup" style="margin-bottom: 14px;">
+            <div class="brand-logos-wrapper">
+              <div class="brand-logo-univ-wrap">
+                <img alt="Horus University Logo" class="brand-logo-univ" src="/logo/horus_university_official_card.png"
+                  style="border-radius: 6px; background: white; height: 50px; object-fit: contain; padding: 2px;" />
+              </div>
+              <span class="brand-logo-divider">✕</span>
+              <div class="brand-logo-amb-wrap">
+                <img alt="Horus Ambassadors Logo" class="brand-logo-amb" src="/logo/Horus Ambassadors.png" />
+              </div>
+            </div>
+          </div>
+          <p class="footer-brand-desc" data-i18n="footer.desc">
+            أسرة سفراء حورس — الكيان الطلابي الرائد بكلية الهندسة، جامعة حورس - مصر. نؤمن بأن الهندسة ليست مجرد معادلات،
+            بل رسالة لخدمة المجتمع وبناء القادة.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/horus_ambassadors" target="_blank" rel="noopener"
+              class="footer-social-btn" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/HorusAmbassadors" target="_blank" rel="noopener" class="footer-social-btn"
+              title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span data-i18n="footer.quick_links">روابط
+              سريعة</span></h5>
+          <ul class="footer-links-list">
+            <li><a href="#about" data-i18n="nav.about"><span class="fl-arrow">›</span> عن الأسرة</a></li>
+            <li><a href="#pillars" data-i18n="nav.pillars"><span class="fl-arrow">›</span> مجالات العمل</a></li>
+            <li><a href="#board"><span class="fl-arrow">›</span> الهيكل الإداري</a></li>
+            <li><a href="#timeline" data-i18n="nav.timeline"><span class="fl-arrow">›</span> مسيرتنا</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery"><span class="fl-arrow">›</span> معرض الصور</a></li>
+            <li><a href="#apply" data-i18n="nav.apply"><span class="fl-arrow">›</span> انضم إلينا</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Campus Info -->
+        <div class="footer-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span
+              data-i18n="footer.contact_title">التواصل والمقر</span></h5>
+          <ul class="footer-contact-list">
+            <li class="f-contact-item">
+              <span class="f-contact-icon">🏛️</span>
+              <div>
+                <strong data-i18n="footer.univ">جامعة حورس - مصر (HUE)</strong>
+                <p data-i18n="footer.faculty"> كلية الهندسة - الطريق الساحلي الدولي، دمياط الجديدة </p>
+              </div>
+            </li>
+            <!-- <li class="f-contact-item">
+              <span class="f-contact-icon">✉️</span> -->
+            <!-- <div>
+                <strong>البريد الأكاديمي</strong>
+                <a href="mailto:mkhassan@horus.edu.eg" class="f-contact-link">eng@horus.edu.eg</a>
+              </div> -->
+            <!-- </li> -->
+            <li class="f-contact-item">
+              <span class="f-contact-icon">🌐</span>
+              <div>
+                <strong>البوابة الرسمية</strong>
+                <a href="https://horus.edu.eg" target="_blank" rel="noopener" class="f-contact-link">horus.edu.eg</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Interactive Map Card -->
+        <div class="footer-col footer-map-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span data-i18n="footer.map_title">موقعنا
+              على الخريطة</span></h5>
+          <div class="footer-map-card">
+            <div class="footer-map-header">
+              <span class="fm-dot"></span>
+              <span class="fm-title">Faculty of Engineering • HUE</span>
+            </div>
+            <div class="footer-map-wrap">
+              <iframe allowfullscreen="" height="140" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                src="https://maps.google.com/maps?q=Faculty%20of%20Engineering%20_%20Horus%20University%20-%20Egypt&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near"
+                style="border:0;" title="Faculty of Engineering _ Horus University - Egypt" width="100%">
+              </iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/AgXtE8pgu7yRCzwn8" target="_blank" rel="noopener"
+              class="footer-map-action">
+              <span>افتح في خرائط Google</span>
+              <span class="fma-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p class="footer-copy" data-i18n="footer.copy">
+            © جميع الحقوق محفوظة لأسرة سفراء حورس (Horus Ambassadors) • جامعة حورس - مصر.
+          </p>
+          <div class="footer-bottom-tech">
+            <span>صُنع بشغف لخدمة طلاب الهندسة ⚡</span>
+            <a href="#" class="back-to-top-btn" title="العودة للأعلى" aria-label="Back to top">
+              <span>الأعلى</span>
+              <span class="btt-arrow">↑</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- ==========================================================================
+       MODAL 1: VIDEO PLAYER MODAL
+       ========================================================================== -->
+  <div aria-modal="true" class="modal-backdrop" id="videoModal" role="dialog">
+    <div class="modal-container">
+      <button aria-label="Close Video Modal" class="modal-close-btn close-video-btn">✕</button>
+      <video class="modal-video-element" controls="" id="mainVideoPlayer" playsinline="" preload="metadata">
+        <source src="/videos/Horus Ambassadors.m4v" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+  <!-- ==========================================================================
+       MODAL 2: LIGHTBOX PHOTO MODAL
+       ========================================================================== -->
+  <div aria-modal="true" class="modal-backdrop" id="lightboxModal" role="dialog">
+    <div class="modal-container" style="max-width: 880px;">
+      <button aria-label="Close Lightbox" class="modal-close-btn close-lightbox-btn">✕</button>
+      <img alt="Enlarged photo view" class="modal-lightbox-img" id="lightboxImg" src="" />
+      <div class="modal-lightbox-info">
+        <h4 class="modal-caption" id="lightboxCaption"></h4>
+        <div class="modal-lightbox-nav">
+          <button aria-label="Previous Photo" class="modal-nav-btn" id="lightboxPrev">‹</button>
+          <button aria-label="Next Photo" class="modal-nav-btn" id="lightboxNext">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ==========================================================================
+       MODAL 3: APPLICATION SUCCESS MODAL
+       ========================================================================== -->
+  <div aria-modal="true" class="modal-backdrop" id="successModal" role="dialog">
+    <div class="modal-container success-card">
+      <button aria-label="Close Success Modal" class="modal-close-btn close-success-btn">✕</button>
+      <div class="success-icon">✓</div>
+      <h3 class="modal-caption" data-i18n="success.title" style="font-size: 1.5rem; margin-bottom: 12px;">تم استلام طلبك
+        بنجاح!</h3>
+      <p data-i18n="success.desc"
+        style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7;">
+        شكراً لاهتمامك بالانضمام لأسرة سفراء حورس. سيقوم فريق الموارد البشرية (HR) بالتواصل معك لتحديد موعد المقابلة
+        الشخصية.
+      </p>
+      <div
+        style="background: rgba(241, 90, 36, 0.12); border: 1px dashed var(--ha-orange); padding: 12px 20px; border-radius: var(--radius-sm); margin-bottom: 24px;">
+        <span data-i18n="success.code" style="font-size: 0.85rem; color: var(--text-muted);">كود الطلب المرجعي:</span>
+        <strong id="successAppCode"
+          style="color: var(--ha-orange-light); font-size: 1.25rem; display: block; margin-top: 4px; font-family: monospace;">HA-000000</strong>
+      </div>
+      <button class="btn btn-brand close-success-btn" data-i18n="success.close" style="width: 100%;">حسناً،
+        رائع!</button>
+    </div>
+  </div>
+  <!-- Application Logic -->
+  <script src="/js/main.js" type="module"></script>
+  <!-- Terminal Modal -->
+  <div class="terminal-overlay" id="terminal-modal">
+    <div class="terminal-window">
+      <div class="terminal-header">
+        <div class="term-dots"><span></span><span></span><span></span></div>
+        <div class="term-title">HORUS_SECURE_LINK // DOSSIER_ACCESS</div>
+        <button class="term-close" onclick="closeTerminal()">×</button>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-text"></div>
+        <div class="terminal-photo-wrap" id="terminal-photo"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

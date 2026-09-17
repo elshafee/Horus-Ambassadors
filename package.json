@@ -1,0 +1,14 @@
+{
+  "name": "horus-ambassadors-website",
+  "version": "1.0.0",
+  "description": "Official Website for Horus Ambassadors - Faculty of Engineering, Horus University-Egypt",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.4.3"
+  }
+}

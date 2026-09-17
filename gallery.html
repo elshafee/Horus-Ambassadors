@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>سفراء حورس | Horus Ambassadors - كلية الهندسة جامعة حورس - مصر</title>
+  <meta name="description" content="الموقع الرسمي لأسرة سفراء حورس (Horus Ambassadors) - كلية الهندسة جامعة حورس - مصر. الأسرة الطلابية الأولى الفائزة بالمركز الأول على مستوى الجامعة في الأنشطة الطلابية." />
+  <link rel="icon" type="image/png" href="/logo/Horus Ambassadors.png" />
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+
+  <!-- ==========================================================================
+       PAGE LOADER — Branded intro animation
+       ========================================================================== -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-blob" id="loaderBlob"></div>
+    <div class="loader-inner">
+      <img src="/logo/Horus Ambassadors.png" alt="Horus Ambassadors" class="loader-logo" />
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-text">سفراء حورس</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ANNOUNCEMENT BAR (dismissible)
+       ========================================================================== -->
+  <div class="announce-bar" id="announceBar" role="alert">
+    <div class="announce-inner">
+      <span class="announce-dot"></span>
+      <span class="announce-text" data-i18n="announce.text">🎉 باب الانضمام لأسرة سفراء حورس مفتوح الآن! سارع بتقديم طلبك قبل انتهاء الفرصة.</span>
+      <a href="#apply" class="announce-cta" data-i18n="announce.cta">سجّل الآن ←</a>
+    </div>
+    <button class="announce-close" id="announceClose" aria-label="Close announcement">✕</button>
+  </div>
+
+  <!-- ==========================================================================
+       ANIMATED BACKGROUND — Engineering Node Network + Diagonal Lines
+       ========================================================================== -->
+  <div class="bg-canvas-wrap" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+    <!-- Subtle diagonal grid overlay -->
+    <div class="bg-diagonal-grid"></div>
+    <!-- Radial glow spots -->
+    <div class="bg-glow bg-glow-orange"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+    <div class="bg-glow bg-glow-navy"></div>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR — SLIM & CLEAN REDESIGN
+       ========================================================================== -->
+  <header class="navbar" id="mainNavbar">
+    <div class="container nav-container">
+
+      <!-- Brand: Single Ambassador Logo + Name only -->
+      <a href="#hero" class="brand-lockup" aria-label="Horus Ambassadors Homepage">
+        <div class="brand-logo-amb-wrap">
+          <img src="/logo/Horus Ambassadors.png" alt="Horus Ambassadors" class="brand-logo-amb" />
+        </div>
+        <div class="brand-text">
+          <span class="brand-title" data-i18n="brand.title">سفراء حورس</span>
+          <span class="brand-sub" data-i18n="brand.sub">كلية الهندسة • HUE</span>
+        </div>
+      </a>
+
+      <!-- Center: Navigation pill -->
+      <nav class="nav-pill-wrap" aria-label="Main Navigation">
+        <ul class="nav-menu">
+          <li><a href="index.html#hero"       class="nav-link"  data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="index.html#about"      class="nav-link"         data-i18n="nav.about">عن الأسرة</a></li>
+          <li><a href="index.html#pillars"    class="nav-link"         data-i18n="nav.pillars">الأنشطة</a></li>
+          <li><a href="index.html#timeline"   class="nav-link"         data-i18n="nav.timeline">مسيرتنا</a></li>
+          <li><a href="#"    class="nav-link active"         data-i18n="nav.gallery">الصور</a></li>
+          <li><a href="index.html#leadership" class="nav-link"         data-i18n="nav.leadership">القيادة</a></li>
+          <li><a href="events.html" class="nav-link"         data-i18n="nav.events">الفعاليات</a></li>
+        </ul>
+      </nav>
+
+      <!-- Right: Actions -->
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle" aria-label="Toggle Theme" title="تبديل المظهر">☀️</button>
+        <button id="langToggleBtn" class="lang-toggle" aria-label="Toggle Language">EN</button>
+        <a href="#apply" class="btn btn-brand nav-cta" data-i18n="nav.apply">انضم إلينا</a>
+        <button id="mobileMenuBtn" class="mobile-toggle" aria-label="Toggle Mobile Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+<section id="gallery" class="gallery-section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-tag" data-i18n="gallery.tag">المعرض التوثيقي</div>
+          <h2 class="section-title" data-i18n="gallery.title">لحظات وذكريات لا تُنسى</h2>
+          <p class="section-subtitle" data-i18n="gallery.subtitle">
+            لقطات حية من بطولات وفعاليات وتكريمات أسرة سفراء حورس
+          </p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all">الكل</button>
+          <button class="filter-btn" data-filter="charity" data-i18n="gallery.filter_charity">العمل الخيري</button>
+          <button class="filter-btn" data-filter="conferences" data-i18n="gallery.filter_conferences">المؤتمرات والتنظيم</button>
+          <button class="filter-btn" data-filter="events" data-i18n="gallery.filter_events">الحياة الجامعية</button>
+          <button class="filter-btn" data-filter="team" data-i18n="gallery.filter_team">فريق السفراء</button>
+        </div>
+
+        <!-- Dynamic Grid -->
+        <div id="galleryGrid" class="gallery-grid">
+          <!-- Populated by main.js -->
+        </div>
+      </div>
+    </section>
+</main>
+
+  <!-- ==========================================================================
+       FOOTER (DUAL LOGOS & AFFILIATION)
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="footer-glow-top"></div>
+    <div class="container">
+      <!-- Top Brand Strip -->
+      <div class="footer-cta-strip">
+        <div class="footer-cta-content">
+          <div class="footer-cta-badge">
+            <span class="pulse-dot"></span>
+            <span>كلية الهندسة • جامعة حورس - مصر</span>
+          </div>
+          <h4 class="footer-cta-title">نصنع قادة الغد ونبني مستقبل الهندسة بروح العمل الجماعي</h4>
+        </div>
+        <div class="footer-cta-action">
+          <a href="index.html#apply" class="btn btn-brand btn-sm">انضم لأسرة سفراء حورس ←</a>
+        </div>
+      </div>
+
+      <!-- Main 4-Column Grid -->
+      <div class="footer-grid">
+        <!-- Col 1: Brand & Socials -->
+        <div class="footer-brand">
+          <div class="brand-lockup" style="margin-bottom: 14px;">
+            <div class="brand-logos-wrapper">
+              <div class="brand-logo-univ-wrap">
+                <img src="/logo/horus_university_official_card.png" alt="Horus University Logo" class="brand-logo-univ" style="border-radius: 6px; background: white; height: 50px; object-fit: contain; padding: 2px;" />
+              </div>
+              <span class="brand-logo-divider">✕</span>
+              <div class="brand-logo-amb-wrap">
+                <img src="/logo/Horus Ambassadors.png" alt="Horus Ambassadors Logo" class="brand-logo-amb" />
+              </div>
+            </div>
+          </div>
+          <p class="footer-brand-desc" data-i18n="footer.desc">
+            أسرة سفراء حورس — الكيان الطلابي الرائد بكلية الهندسة، جامعة حورس - مصر. نؤمن بأن الهندسة ليست مجرد معادلات، بل رسالة لخدمة المجتمع وبناء القادة.
+          </p>
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/horus_ambassadors" target="_blank" rel="noopener" class="footer-social-btn" title="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+              <span>Instagram</span>
+            </a>
+            <a href="https://www.facebook.com/HorusAmbassadors" target="_blank" rel="noopener" class="footer-social-btn" title="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+              <span>Facebook</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span data-i18n="footer.quick_links">روابط سريعة</span></h5>
+          <ul class="footer-links-list">
+            <li><a href="index.html#about" data-i18n="nav.about"><span class="fl-arrow">›</span> عن الأسرة</a></li>
+            <li><a href="index.html#pillars" data-i18n="nav.pillars"><span class="fl-arrow">›</span> مجالات العمل</a></li>
+            <li><a href="index.html#board"><span class="fl-arrow">›</span> الهيكل الإداري</a></li>
+            <li><a href="index.html#timeline" data-i18n="nav.timeline"><span class="fl-arrow">›</span> مسيرتنا</a></li>
+            <li><a href="gallery.html" data-i18n="nav.gallery"><span class="fl-arrow">›</span> معرض الصور</a></li>
+            <li><a href="index.html#apply" data-i18n="nav.apply"><span class="fl-arrow">›</span> انضم إلينا</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Contact & Campus Info -->
+        <div class="footer-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span data-i18n="footer.contact_title">التواصل والمقر</span></h5>
+          <ul class="footer-contact-list">
+            <li class="f-contact-item">
+              <span class="f-contact-icon">🏛️</span>
+              <div>
+                <strong data-i18n="footer.univ">جامعة حورس - مصر (HUE)</strong>
+                <p data-i18n="footer.faculty">كلية الهندسة - الطريق الساحلي الدولي، نيو دمياط</p>
+              </div>
+            </li>
+            <li class="f-contact-item">
+              <span class="f-contact-icon">✉️</span>
+              <div>
+                <strong>البريد الأكاديمي</strong>
+                <a href="mailto:eng@horus.edu.eg" class="f-contact-link">eng@horus.edu.eg</a>
+              </div>
+            </li>
+            <li class="f-contact-item">
+              <span class="f-contact-icon">🌐</span>
+              <div>
+                <strong>البوابة الرسمية</strong>
+                <a href="https://horus.edu.eg" target="_blank" rel="noopener" class="f-contact-link">horus.edu.eg</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Interactive Map Card -->
+        <div class="footer-col footer-map-col">
+          <h5 class="footer-heading"><span class="footer-heading-bar"></span> <span data-i18n="footer.map_title">موقعنا على الخريطة</span></h5>
+          <div class="footer-map-card">
+            <div class="footer-map-header">
+              <span class="fm-dot"></span>
+              <span class="fm-title">Faculty of Engineering • HUE</span>
+            </div>
+            <div class="footer-map-wrap">
+              <iframe allowfullscreen="" height="140" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Faculty%20of%20Engineering%20_%20Horus%20University%20-%20Egypt&amp;t=m&amp;z=15&amp;output=embed&amp;iwloc=near" style="border:0;" title="Faculty of Engineering _ Horus University - Egypt" width="100%">
+              </iframe>
+            </div>
+            <a href="https://maps.app.goo.gl/AgXtE8pgu7yRCzwn8" target="_blank" rel="noopener" class="footer-map-action">
+              <span>افتح في خرائط Google</span>
+              <span class="fma-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-inner">
+          <p class="footer-copy" data-i18n="footer.copy">
+            © جميع الحقوق محفوظة لأسرة سفراء حورس (Horus Ambassadors) • جامعة حورس - مصر.
+          </p>
+          <div class="footer-bottom-tech">
+            <span>صُنع بشغف لخدمة طلاب الهندسة ⚡</span>
+            <a href="#" class="back-to-top-btn" title="العودة للأعلى" aria-label="Back to top">
+              <span>الأعلى</span>
+              <span class="btt-arrow">↑</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODAL 1: VIDEO PLAYER MODAL
+       ========================================================================== -->
+  <div id="videoModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn close-video-btn" aria-label="Close Video Modal">✕</button>
+      <video id="mainVideoPlayer" class="modal-video-element" controls playsinline preload="metadata">
+        <source src="/videos/Horus Ambassadors.m4v" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 2: LIGHTBOX PHOTO MODAL
+       ========================================================================== -->
+  <div id="lightboxModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 880px;">
+      <button class="modal-close-btn close-lightbox-btn" aria-label="Close Lightbox">✕</button>
+      <img id="lightboxImg" class="modal-lightbox-img" src="" alt="Enlarged photo view" />
+      <div class="modal-lightbox-info">
+        <h4 id="lightboxCaption" class="modal-caption"></h4>
+        <div class="modal-lightbox-nav">
+          <button id="lightboxPrev" class="modal-nav-btn" aria-label="Previous Photo">‹</button>
+          <button id="lightboxNext" class="modal-nav-btn" aria-label="Next Photo">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: APPLICATION SUCCESS MODAL
+       ========================================================================== -->
+  <div id="successModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container success-card">
+      <button class="modal-close-btn close-success-btn" aria-label="Close Success Modal">✕</button>
+      <div class="success-icon">✓</div>
+      <h3 class="modal-caption" style="font-size: 1.5rem; margin-bottom: 12px;" data-i18n="success.title">تم استلام طلبك بنجاح!</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7;" data-i18n="success.desc">
+        شكراً لاهتمامك بالانضمام لأسرة سفراء حورس. سيقوم فريق الموارد البشرية (HR) بالتواصل معك لتحديد موعد المقابلة الشخصية.
+      </p>
+      <div style="background: rgba(241, 90, 36, 0.12); border: 1px dashed var(--ha-orange); padding: 12px 20px; border-radius: var(--radius-sm); margin-bottom: 24px;">
+        <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="success.code">كود الطلب المرجعي:</span>
+        <strong id="successAppCode" style="color: var(--ha-orange-light); font-size: 1.25rem; display: block; margin-top: 4px; font-family: monospace;">HA-000000</strong>
+      </div>
+      <button class="btn btn-brand close-success-btn" style="width: 100%;" data-i18n="success.close">حسناً، رائع!</button>
+    </div>
+  </div>
+
+
+
+  <!-- Application Logic -->
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

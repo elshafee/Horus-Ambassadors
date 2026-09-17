@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>
+   فعاليات سفراء حورس | Events Archive — Horus Ambassadors
+  </title>
+<meta content="أرشيف جميع فعاليات وأنشطة أسرة سفراء حورس من مؤتمرات وأعمال خيرية ورحلات وأنشطة جامعية منذ 2020." name="description"/>
+<link href="/logo/Horus Ambassadors.png" rel="icon" type="image/png"/>
+<link href="/css/styles.css" rel="stylesheet"/>
+<style>
+   .events-back-bar {
+      position: fixed; top: 0; left: 0; right: 0; height: 60px;
+      background: rgba(4,12,30,0.95); backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; padding: 0 24px; gap: 20px; z-index: 1000;
+    }
+    .events-back-btn {
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted); padding: 8px 18px; border-radius: var(--radius-full);
+      font-size: 0.875rem; font-weight: 700; cursor: pointer; text-decoration: none;
+      transition: var(--transition-fast); font-family: var(--font-current);
+    }
+    .events-back-btn:hover { background: var(--ha-orange); color: #fff; border-color: var(--ha-orange); }
+    .events-bar-title {
+      font-size: 1rem; font-weight: 800;
+      background: var(--brand-gradient); -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .events-page-wrap { padding-top: 80px; min-height: 100vh; }
+    .events-page-hero { padding: 60px 0 40px; text-align: center; }
+    .events-page-title { font-size: clamp(2rem,5vw,3.2rem); font-weight: 900; color: var(--text-main); margin-bottom: 12px; }
+    .events-page-subtitle { font-size: 1.05rem; color: var(--text-muted); }
+    .events-stats { display: flex; justify-content: center; gap: 40px; margin: 24px 0 0; flex-wrap: wrap; }
+    .ev-stat { text-align: center; }
+    .ev-stat-num { font-size: 2rem; font-weight: 900; color: var(--ha-orange); display: block; }
+    .ev-stat-label { font-size: 0.8rem; color: var(--text-dim); }
+    .events-filter-bar { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; padding: 24px 0 36px; }
+    .ev-filter-btn {
+      background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--text-muted); padding: 9px 22px; border-radius: var(--radius-full);
+      font-size: 0.875rem; font-weight: 700; cursor: pointer; transition: var(--transition-fast);
+      font-family: var(--font-current);
+    }
+    .ev-filter-btn.active, .ev-filter-btn:hover { background: var(--ha-orange); color: #fff; border-color: var(--ha-orange); }
+    .events-main-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 28px; padding-bottom: 80px;
+    }
+    .ev-card { padding: 0; overflow: hidden; cursor: pointer; transition: var(--transition-normal); }
+    .ev-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+    .ev-card-img-wrap { height: 210px; overflow: hidden; position: relative; }
+    .ev-card-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+    .ev-card:hover .ev-card-img { transform: scale(1.07); }
+    .ev-card-tag {
+      position: absolute; top: 12px; right: 12px;
+      background: rgba(0,0,0,0.65); backdrop-filter: blur(8px);
+      color: #fff; font-size: 0.72rem; font-weight: 700; padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+    .ev-card-year-badge {
+      position: absolute; bottom: 12px; left: 12px;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(8px);
+      color: var(--hue-gold); font-size: 0.7rem; font-weight: 800; padding: 3px 10px;
+      border-radius: var(--radius-full); letter-spacing: 0.05em;
+    }
+    .ev-card-body { padding: 22px; }
+    .ev-card-year { font-size: 0.78rem; color: var(--hue-gold); font-weight: 700; margin-bottom: 6px; }
+    .ev-card-title { font-size: 1.05rem; font-weight: 800; color: var(--text-main); line-height: 1.4; margin-bottom: 8px; }
+    .ev-card-desc { font-size: 0.875rem; color: var(--text-muted); line-height: 1.6; }
+    .ev-card-hidden { display: none !important; }
+    .ev-tag-charity { background: rgba(232,168,7,0.9) !important; color: #0a0a0a !important; }
+    .ev-tag-conf { background: rgba(14,165,233,0.85) !important; }
+    .ev-tag-campus { background: rgba(241,90,36,0.85) !important; }
+    .ev-tag-trips { background: rgba(34,197,94,0.85) !important; color: #0a0a0a !important; }
+    .ev-year-section { margin-bottom: 12px; margin-top: 40px; }
+    .ev-year-section-label {
+      font-size: 0.75rem; font-weight: 900; letter-spacing: 0.1em;
+      color: var(--text-dim); text-transform: uppercase;
+      border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 10px; margin-bottom: 24px;
+    }
+  </style>
+</head>
+<body>
+<div aria-hidden="true" class="bg-canvas-wrap">
+<canvas id="bgCanvas">
+</canvas>
+<div class="bg-diagonal-grid">
+</div>
+<div class="bg-glow bg-glow-orange">
+</div>
+<div class="bg-glow bg-glow-gold">
+</div>
+</div>
+<div class="events-back-bar">
+<a class="events-back-btn" href="index.html">
+    ← العودة للرئيسية
+   </a>
+<span class="events-bar-title">
+    أرشيف الفعاليات — سفراء حورس
+   </span>
+</div>
+<div class="events-page-wrap">
+<div class="container">
+<div class="events-page-hero">
+<div class="section-tag" style="margin:0 auto 16px;width:fit-content;">
+      📁 أرشيف الفعاليات
+     </div>
+<h1 class="events-page-title">
+      كل فعاليات وأنشطة سفراء حورس
+     </h1>
+<p class="events-page-subtitle">
+      توثيق شامل لجميع الفعاليات منذ تأسيس الأسرة عام 2020 حتى اليوم
+     </p>
+<div class="events-stats">
+<div class="ev-stat">
+<span class="ev-stat-num">
+        4+
+       </span>
+<span class="ev-stat-label">
+        سنوات نشاط
+       </span>
+</div>
+<div class="ev-stat">
+<span class="ev-stat-num">
+        20+
+       </span>
+<span class="ev-stat-label">
+        فعالية موثقة
+       </span>
+</div>
+<div class="ev-stat">
+<span class="ev-stat-num">
+        5
+       </span>
+<span class="ev-stat-label">
+        قوافل رمضان
+       </span>
+</div>
+<div class="ev-stat">
+<span class="ev-stat-num">
+        2
+       </span>
+<span class="ev-stat-label">
+        معارض خيرية
+       </span>
+</div>
+</div>
+</div>
+<div class="events-filter-bar">
+<button class="ev-filter-btn active" data-filter="all">الكل</button>
+<button class="ev-filter-btn" data-filter="charity_community">الأنشطة الخيرية والمجتمعية</button>
+<button class="ev-filter-btn" data-filter="recreational">الأنشطة الترفيهية</button>
+<button class="ev-filter-btn" data-filter="academic_student_life">الأكاديمية والطلابية</button>
+<button class="ev-filter-btn" data-filter="conferences">المؤتمرات والتنظيم</button>
+</div>
+<div class="timeline-container" id="eventsGrid">
+<!-- Dynamically rendered by JS -->
+</div>
+<!-- /.events-main-grid -->
+</div>
+</div>
+<script src="js/horus-events-data.js"></script>
+<script>
+    // Dynamic Rendering Logic
+    function renderTimeline() {
+      const timelineContainer = document.getElementById('eventsGrid');
+      if (timelineContainer && typeof eventsDataset !== 'undefined') {
+        timelineContainer.innerHTML = '';
+        
+        let events = eventsDataset.events;
+        events.sort((a,b) => {
+            if(a.year === b.year) return b.id.localeCompare(a.id);
+            return b.year.localeCompare(a.year);
+        });
+
+        const catMap = eventsDataset.categories.reduce((acc, cat) => {
+            acc[cat.id] = cat;
+            return acc;
+        }, {});
+
+        events.forEach(ev => {
+          let hasImage = (ev.image_status === 'direct_urls_confirmed' || ev.image_status === 'direct_url_confirmed') && ev.images && ev.images.length > 0;
+          let coverImg = hasImage ? ev.images[0] : '';
+          
+          let catData = catMap[ev.category] || { label_ar: ev.category, id: ev.category };
+          let dotColor = 'gold';
+          let fallbackIcon = 'fa-star';
+          let fallbackGradient = 'linear-gradient(135deg, var(--bg-darker), var(--accent-gold-dark))';
+          
+          if(ev.category.includes('charity')) { 
+              dotColor = 'orange'; 
+              fallbackIcon = 'fa-hand-holding-heart';
+              fallbackGradient = 'linear-gradient(135deg, #FF8C00, #E65100)';
+          } else if(ev.category.includes('recreational')) { 
+              dotColor = 'teal'; 
+              fallbackIcon = 'fa-laugh-beam';
+              if (ev.title.toLowerCase().includes('trip') || ev.title_ar.includes('رحلة')) {
+                  fallbackIcon = 'fa-bus-alt';
+              } else if (ev.title.toLowerCase().includes('ramadan') || ev.title_ar.includes('رمضان')) {
+                  fallbackIcon = 'fa-moon';
+              }
+              fallbackGradient = 'linear-gradient(135deg, #008080, #004D40)';
+          } else if(ev.category.includes('conferences') || ev.category.includes('career')) { 
+              dotColor = 'teal'; 
+              fallbackIcon = 'fa-microphone-alt';
+              fallbackGradient = 'linear-gradient(135deg, #2E86C1, #1B4F72)';
+          } else if(ev.category.includes('student_orientation')) { 
+              fallbackIcon = 'fa-users';
+              fallbackGradient = 'linear-gradient(135deg, #9B59B6, #4A235A)';
+          } else if(ev.category.includes('academic_student_life')) { 
+              fallbackIcon = 'fa-university';
+              fallbackGradient = 'linear-gradient(135deg, #D4AC0D, #7D6608)';
+          }
+
+          let displayDate = ev.date || ev.year;
+          let dateStr = `<span dir="ltr" style="display:inline-block;">${displayDate}</span>`;
+
+          let mediaHTML = '';
+          if (hasImage) {
+              mediaHTML = `
+                <img alt="${ev.title_ar}" class="ev-card-img" loading="lazy" src="${coverImg}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
+                <div class="fallback-icon-wrap" style="display:none; position: absolute; top:0; left:0; width:100%; height:100%; background: ${fallbackGradient}; align-items: center; justify-content: center;">
+                    <i class="fas ${fallbackIcon}" style="font-size: 4rem; color: rgba(255,255,255,0.2);"></i>
+                </div>
+                <span class="ev-card-tag ev-tag-${ev.category}">${catData.label_ar}</span>
+                <span class="ev-card-year-badge">${ev.year}</span>
+              `;
+          } else {
+              // Proper Gradient Icon Placeholder instead of wrong random images!
+              mediaHTML = `
+                <div style="width: 100%; height: 200px; background: ${fallbackGradient}; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas ${fallbackIcon}" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
+                </div>
+                <span class="ev-card-tag ev-tag-${ev.category}" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; color: #fff; z-index: 2;">${catData.label_ar}</span>
+                <span class="ev-card-year-badge" style="position: absolute; bottom: 15px; left: 15px; background: var(--accent-gold); color: #000; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; z-index: 2;">${ev.year}</span>
+              `;
+          }
+
+          const itemHTML = `
+            <div class="timeline-item">
+              <div class="timeline-dot timeline-dot--${dotColor}"></div>
+              <div class="glass-card ev-card" data-cat="${ev.category}" style="cursor: pointer;" onclick="window.location.href='event-details.html?id=${ev.id}'">
+                <div class="ev-card-img-wrap" style="position: relative; overflow: hidden; border-radius: 12px 12px 0 0;">
+                  ${mediaHTML}
+                </div>
+                <div class="ev-card-body">
+                  <div class="ev-card-year" style="color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 8px; text-align: right;">${dateStr}</div>
+                  <h3 class="ev-card-title">${ev.title_ar}</h3>
+                  <p class="ev-card-desc" style="opacity: 0.8; font-size: 0.95rem;">${ev.description}</p>
+                </div>
+              </div>
+            </div>
+          `;
+          timelineContainer.insertAdjacentHTML('beforeend', itemHTML);
+        });
+      }
+    }
+
+    renderTimeline();
+    
+    function updateTimelineAlternating() {
+      let visibleCount = 0;
+      const items = document.querySelectorAll('.timeline-item');
+      items.forEach(item => {
+        if (item.style.display !== 'none') {
+          item.classList.remove('left', 'right');
+          if (visibleCount % 2 === 0) {
+            item.classList.add('left');
+          } else {
+            item.classList.add('right');
+          }
+          visibleCount++;
+        }
+      });
+    }
+
+    document.querySelectorAll('.ev-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.ev-filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filter = btn.dataset.filter;
+        document.querySelectorAll('.timeline-item').forEach(wrapper => {
+          const card = wrapper.querySelector('.ev-card');
+          if (!card) return;
+          const isVisible = (filter === 'all' || card.dataset.cat === filter);
+          wrapper.style.display = isVisible ? '' : 'none';
+        });
+        updateTimelineAlternating();
+      });
+    });
+    
+    updateTimelineAlternating();
+
+    
+    // Canvas background - Engineering Theme
+    const canvas = document.getElementById("bgCanvas");
+    if (canvas) {
+      const ctx = canvas.getContext("2d");
+      let W, H, shapes;
+      const SHAPE_COUNT = 30; 
+      const SPEED = 0.3;
+      const CONNECTION_DIST = 150;
+      const COLORS = ["rgba(212, 175, 55, ", "rgba(241, 90, 36, ", "rgba(255, 255, 255, "];
+
+      function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+      function createShapes() {
+        shapes = [];
+        const types = ["hexagon", "triangle", "square", "circuit", "gear", "dot"];
+        for (let i = 0; i < SHAPE_COUNT; i++) {
+          let type = types[Math.floor(Math.random() * types.length)];
+          if (Math.random() > 0.6) type = "dot";
+          shapes.push({
+            type: type, x: Math.random() * W, y: Math.random() * H,
+            vx: (Math.random() - 0.5) * SPEED, vy: (Math.random() - 0.5) * SPEED,
+            size: type === "dot" ? (2 + Math.random() * 3) : (10 + Math.random() * 25),
+            angle: Math.random() * Math.PI * 2, vAngle: (Math.random() - 0.5) * 0.02,
+            colorBase: COLORS[Math.floor(Math.random() * COLORS.length)],
+            opacity: 0.1 + Math.random() * 0.2
+          });
+        }
+      }
+      
+      function drawHexagon(ctx, x, y, size) { ctx.beginPath(); for(let i=0;i<6;i++){ const a=(Math.PI/3)*i; const px=x+size*Math.cos(a); const py=y+size*Math.sin(a); if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); } ctx.closePath(); ctx.stroke(); }
+      function drawTriangle(ctx, x, y, size) { ctx.beginPath(); for(let i=0;i<3;i++){ const a=(Math.PI*2/3)*i-Math.PI/2; const px=x+size*Math.cos(a); const py=y+size*Math.sin(a); if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); } ctx.closePath(); ctx.stroke(); }
+      function drawSquare(ctx, x, y, size) { ctx.strokeRect(x - size/2, y - size/2, size, size); }
+      function drawCircuit(ctx, x, y, size) { ctx.beginPath(); ctx.moveTo(x-size,y); ctx.lineTo(x-size/2,y); ctx.lineTo(x,y-size/2); ctx.lineTo(x+size/2,y-size/2); ctx.stroke(); ctx.beginPath(); ctx.arc(x+size/2,y-size/2,3,0,Math.PI*2); ctx.fill(); ctx.beginPath(); ctx.moveTo(x-size/2,y); ctx.lineTo(x,y+size/2); ctx.lineTo(x+size,y+size/2); ctx.stroke(); ctx.beginPath(); ctx.arc(x-size,y,3,0,Math.PI*2); ctx.fill(); }
+      function drawGear(ctx, x, y, size) { const teeth=8; const inner=size*0.6; ctx.beginPath(); for(let i=0;i<teeth*2;i++){ const r=i%2===0?size:inner; const a=(Math.PI/teeth)*i; const px=x+r*Math.cos(a); const py=y+r*Math.sin(a); if(i===0)ctx.moveTo(px,py); else ctx.lineTo(px,py); } ctx.closePath(); ctx.stroke(); ctx.beginPath(); ctx.arc(x,y,inner*0.5,0,Math.PI*2); ctx.stroke(); }
+
+      function animate() {
+        ctx.clearRect(0, 0, W, H);
+        ctx.strokeStyle = "rgba(212, 175, 55, 0.03)"; ctx.lineWidth = 1; ctx.beginPath();
+        for (let x=0; x<W; x+=150) { ctx.moveTo(x, 0); ctx.lineTo(x, H); }
+        for (let y=0; y<H; y+=150) { ctx.moveTo(0, y); ctx.lineTo(W, y); }
+        ctx.stroke();
+
+        for (let i=0; i<shapes.length; i++) {
+          for (let j=i+1; j<shapes.length; j++) {
+            const dist = Math.hypot(shapes[i].x-shapes[j].x, shapes[i].y-shapes[j].y);
+            if (dist < CONNECTION_DIST) {
+              ctx.beginPath(); ctx.moveTo(shapes[i].x, shapes[i].y);
+              if (Math.random() > 0.5) ctx.lineTo(shapes[j].x, shapes[i].y);
+              else ctx.lineTo(shapes[i].x, shapes[j].y);
+              ctx.lineTo(shapes[j].x, shapes[j].y);
+              ctx.strokeStyle = `rgba(212, 175, 55, ${(1-dist/CONNECTION_DIST)*0.15})`;
+              ctx.stroke();
+            }
+          }
+        }
+
+        shapes.forEach(s => {
+          s.x += s.vx; s.y += s.vy; s.angle += s.vAngle;
+          if (s.x < -100) s.x = W+100; if (s.x > W+100) s.x = -100;
+          if (s.y < -100) s.y = H+100; if (s.y > H+100) s.y = -100;
+          ctx.save(); ctx.translate(s.x, s.y); ctx.rotate(s.angle);
+          ctx.strokeStyle = ctx.fillStyle = s.colorBase + s.opacity + ")"; ctx.lineWidth = 1.5;
+          if (s.type === "hexagon") drawHexagon(ctx, 0, 0, s.size);
+          else if (s.type === "triangle") drawTriangle(ctx, 0, 0, s.size);
+          else if (s.type === "square") drawSquare(ctx, 0, 0, s.size);
+          else if (s.type === "circuit") drawCircuit(ctx, 0, 0, s.size);
+          else if (s.type === "gear") drawGear(ctx, 0, 0, s.size);
+          else { ctx.beginPath(); ctx.arc(0,0,s.size,0,Math.PI*2); ctx.fill(); }
+          ctx.restore();
+        });
+        requestAnimationFrame(animate);
+      }
+      window.addEventListener("resize", () => { resize(); createShapes(); });
+      resize(); createShapes(); animate();
+    }
+
+</script>
+</body>
+</html>
