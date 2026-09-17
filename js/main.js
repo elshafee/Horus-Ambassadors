@@ -1816,6 +1816,19 @@ function initFameTabs() {
 // ==========================================================================
 // 10. INITIALIZATION
 // ==========================================================================
+// JIT Hydration Utility
+const lazyLoadSection = (selector, initFn) => {
+  const el = document.querySelector(selector);
+  if (!el) return;
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      initFn();
+      obs.disconnect();
+    }
+  }, { rootMargin: '400px' });
+  observer.observe(el);
+};
+
 document.addEventListener("DOMContentLoaded", () => {
 
   // Set initial language
@@ -1838,12 +1851,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+
+  // JIT Hydration Utility
+
+
   // Gallery & filters
-  initGalleryFilters();
-  renderGallery();
+  lazyLoadSection("#gallery", () => {
+    initGalleryFilters();
+    renderGallery();
+  });
 
   // Stats Counters
-  initStatsCounter();
+  lazyLoadSection(".stats-section", () => {
+    initStatsCounter();
+  });
 
   // Recruitment Form
   initRecruitmentForm();
@@ -1861,7 +1882,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Hall of Fame Tabs
-  initFameTabs();
+  lazyLoadSection("#hall-of-fame", () => {
+    initFameTabs();
+  });
 
   // Announcement bar dismiss
   initAnnounceBar();
@@ -1906,7 +1929,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // ==========================================================================
   // LEADERSHIP TABS
   // ==========================================================================
-  initLeadershipTabs();
+  lazyLoadSection("#leadership", () => {
+    initLeadershipTabs();
+  });
 });
 
 /**
@@ -2229,7 +2254,20 @@ function closeTerminal() {
 
 // Modal Backdrop Click & Escape Key Listeners
 if (typeof window !== "undefined") {
-  document.addEventListener("DOMContentLoaded", () => {
+  // JIT Hydration Utility
+const lazyLoadSection = (selector, initFn) => {
+  const el = document.querySelector(selector);
+  if (!el) return;
+  const observer = new IntersectionObserver((entries, obs) => {
+    if (entries[0].isIntersecting) {
+      initFn();
+      obs.disconnect();
+    }
+  }, { rootMargin: '400px' });
+  observer.observe(el);
+};
+
+document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("terminal-modal");
     if (modal) {
       modal.addEventListener("click", (e) => {
@@ -2250,7 +2288,7 @@ if (typeof window !== "undefined") {
 // ==========================================================================
 // HOME PAGE 3D GLOBE GALLERY
 // ==========================================================================
-document.addEventListener('DOMContentLoaded', () => {
+lazyLoadSection('#home-globe-container', () => {
   const globe = document.getElementById('home-globe');
   const container = document.getElementById('home-globe-container');
   
@@ -2453,7 +2491,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Auto-Trigger Terminal Animation for Team Leader on Scroll
-document.addEventListener('DOMContentLoaded', () => {
+lazyLoadSection('#leadership', () => {
   const leadershipSection = document.getElementById('leadership');
   const centerNode = document.querySelector('.orbit-node.center-node .orbit-card');
   
