@@ -186,3 +186,4 @@ const achievementsData = {
     ]
   }
 };
+window.achievementsData = achievementsData;

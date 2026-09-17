@@ -602,3 +602,5 @@ const eventsDataset = {
     "recommended_sort": "date_desc"
   }
 };
+
+window.eventsDataset = eventsDataset;
