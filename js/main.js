@@ -1882,7 +1882,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   // Hall of Fame Tabs
-  lazyLoadSection("#hall-of-fame", () => {
+  lazyLoadSection("#fame", () => {
     initFameTabs();
   });
 
