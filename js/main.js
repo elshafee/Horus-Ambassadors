@@ -2187,7 +2187,7 @@ function openTerminal(element) {
         photoBox.innerHTML = `
           <div class="terminal-profile-card">
             <div class="tpc-header">
-              <img src="${imgUrl}" alt="${name}" class="tpc-img" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='${imgUrl.replace(/^\//, '')}';}">
+              <img src="${imgUrl}" alt="${name}" class="tpc-img" loading="lazy" onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='${imgUrl.replace(/^\\//, '')}';}">
               <div class="tpc-hud-badge"><span class="tpc-hud-dot"></span> DOSSIER // VERIFIED</div>
             </div>
             <div class="tpc-body">
