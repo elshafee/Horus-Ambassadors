@@ -1988,10 +1988,19 @@ function initPageLoader() {
     }
   };
 
+  let dismissed = false;
+  const safeDismiss = () => {
+    if (dismissed) return;
+    dismissed = true;
+    setTimeout(dismiss, 500);
+  };
+
   if (document.readyState === 'complete') {
-    setTimeout(dismiss, 800);
+    safeDismiss();
   } else {
-    window.addEventListener('load', () => setTimeout(dismiss, 800));
+    window.addEventListener('load', safeDismiss);
+    // Force dismiss after 1.5 seconds even if heavy assets are still loading
+    setTimeout(safeDismiss, 1500);
   }
 }
 // ==========================================================================
