@@ -4,15 +4,58 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>سفراء حورس | Horus Ambassadors - كلية الهندسة جامعة حورس - مصر</title>
-    <script type="module" src="/js/achievements-data.js"></script>
   <meta name="description" content="الموقع الرسمي لأسرة سفراء حورس (Horus Ambassadors) - كلية الهندسة جامعة حورس - مصر. الأسرة الطلابية الأولى الفائزة بالمركز الأول على مستوى الجامعة في الأنشطة الطلابية." />
   <link rel="icon" type="image/png" href="/logo/Horus Ambassadors.png" />
   
   <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="/css/styles.css" />
+  <script type="module" crossorigin src="/assets/styles-a51RquwX.js"></script>
+  <script type="module" crossorigin src="/assets/main-Abrsm_1o.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/styles-DNATYEFk.css">
 </head>
-
 <body>
+
+  <!-- ==========================================================================
+       PAGE LOADER — Branded intro animation
+       ========================================================================== -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-blob" id="loaderBlob"></div>
+    <div class="loader-inner">
+      <img src="/logo/Horus Ambassadors.png" alt="Horus Ambassadors" class="loader-logo" />
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loaderBar"></div>
+      </div>
+      <p class="loader-text">سفراء حورس</p>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ANNOUNCEMENT BAR (dismissible)
+       ========================================================================== -->
+  <div class="announce-bar" id="announceBar" role="alert">
+    <div class="announce-inner">
+      <span class="announce-dot"></span>
+      <span class="announce-text" data-i18n="announce.text">🎉 باب الانضمام لأسرة سفراء حورس مفتوح الآن! سارع بتقديم طلبك قبل انتهاء الفرصة.</span>
+      <a href="#apply" class="announce-cta" data-i18n="announce.cta">سجّل الآن ←</a>
+    </div>
+    <button class="announce-close" id="announceClose" aria-label="Close announcement">✕</button>
+  </div>
+
+  <!-- ==========================================================================
+       ANIMATED BACKGROUND — Engineering Node Network + Diagonal Lines
+       ========================================================================== -->
+  <div class="bg-canvas-wrap" aria-hidden="true">
+    <canvas id="bgCanvas"></canvas>
+    <!-- Subtle diagonal grid overlay -->
+    <div class="bg-diagonal-grid"></div>
+    <!-- Radial glow spots -->
+    <div class="bg-glow bg-glow-orange"></div>
+    <div class="bg-glow bg-glow-gold"></div>
+    <div class="bg-glow bg-glow-navy"></div>
+  </div>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR — SLIM & CLEAN REDESIGN
+       ========================================================================== -->
   <header class="navbar" id="mainNavbar">
     <div class="container nav-container">
 
@@ -30,12 +73,12 @@
       <!-- Center: Navigation pill -->
       <nav class="nav-pill-wrap" aria-label="Main Navigation">
         <ul class="nav-menu">
-          <li><a href="#hero"       class="nav-link active"  data-i18n="nav.home">الرئيسية</a></li>
-          <li><a href="#about"      class="nav-link"         data-i18n="nav.about">عن الأسرة</a></li>
-          <li><a href="#pillars"    class="nav-link"         data-i18n="nav.pillars">الأنشطة</a></li>
-          <li><a href="#timeline"   class="nav-link"         data-i18n="nav.timeline">مسيرتنا</a></li>
-          <li><a href="#gallery"    class="nav-link"         data-i18n="nav.gallery">الصور</a></li>
-          <li><a href="#leadership" class="nav-link"         data-i18n="nav.leadership">القيادة</a></li>
+          <li><a href="index.html#hero"       class="nav-link"  data-i18n="nav.home">الرئيسية</a></li>
+          <li><a href="index.html#about"      class="nav-link"         data-i18n="nav.about">عن الأسرة</a></li>
+          <li><a href="index.html#pillars"    class="nav-link"         data-i18n="nav.pillars">الأنشطة</a></li>
+          <li><a href="index.html#timeline"   class="nav-link"         data-i18n="nav.timeline">مسيرتنا</a></li>
+          <li><a href="#"    class="nav-link active"         data-i18n="nav.gallery">الصور</a></li>
+          <li><a href="index.html#leadership" class="nav-link"         data-i18n="nav.leadership">القيادة</a></li>
           <li><a href="events.html" class="nav-link"         data-i18n="nav.events">الفعاليات</a></li>
         </ul>
       </nav>
@@ -53,26 +96,37 @@
     </div>
   </header>
 
-  <main style="padding-top: 100px; min-height: 100vh;">
-    <section class="ach-detail-hero" style="text-align: center; padding: 60px 20px; background: rgba(4, 12, 30, 0.8);">
+  <main>
+<section id="gallery" class="gallery-section">
       <div class="container">
-        <h1 id="ach-title" style="font-size: 3rem; color: var(--ha-orange); margin-bottom: 20px;"></h1>
-        <p id="ach-desc" style="font-size: 1.2rem; color: #ddd; max-width: 800px; margin: 0 auto; line-height: 1.6;"></p>
-      </div>
-    </section>
+        <div class="section-header">
+          <div class="section-tag" data-i18n="gallery.tag">المعرض التوثيقي</div>
+          <h2 class="section-title" data-i18n="gallery.title">لحظات وذكريات لا تُنسى</h2>
+          <p class="section-subtitle" data-i18n="gallery.subtitle">
+            لقطات حية من بطولات وفعاليات وتكريمات أسرة سفراء حورس
+          </p>
+        </div>
 
-        <section class="ach-detail-gallery" style="padding: 20px; display: flex; justify-content: center; align-items: center; min-height: 80vh; overflow: hidden; position: relative;">
-      <div id="globe-container" style="position: relative; width: 100vw; height: 100vh; max-width: 800px; max-height: 800px; perspective: 1200px; cursor: grab;">
-        <div id="globe" style="position: absolute; width: 100%; height: 100%; transform-style: preserve-3d;">
-          <!-- Images injected here -->
+        <!-- Filter Buttons -->
+        <div class="gallery-filters">
+          <button class="filter-btn active" data-filter="all" data-i18n="gallery.filter_all">الكل</button>
+          <button class="filter-btn" data-filter="charity" data-i18n="gallery.filter_charity">العمل الخيري</button>
+          <button class="filter-btn" data-filter="conferences" data-i18n="gallery.filter_conferences">المؤتمرات والتنظيم</button>
+          <button class="filter-btn" data-filter="events" data-i18n="gallery.filter_events">الحياة الجامعية</button>
+          <button class="filter-btn" data-filter="team" data-i18n="gallery.filter_team">فريق السفراء</button>
+        </div>
+
+        <!-- Dynamic Grid -->
+        <div id="galleryGrid" class="gallery-grid">
+          <!-- Populated by main.js -->
         </div>
       </div>
-      <div style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); color: rgba(255,255,255,0.5); font-size: 0.9rem; pointer-events: none;">
-        اسحب للتدوير | Drag to spin
-      </div>
     </section>
-  </main>
+</main>
 
+  <!-- ==========================================================================
+       FOOTER (DUAL LOGOS & AFFILIATION)
+       ========================================================================== -->
   <footer class="site-footer">
     <div class="footer-glow-top"></div>
     <div class="container">
@@ -198,216 +252,58 @@
       </div>
     </div>
   </footer>
-  
-  <!-- JavaScript -->
-  <script type="module" src="/js/main.js"></script>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const urlParams = new URLSearchParams(window.location.search);
-      const id = urlParams.get('id');
-      if (!id || !achievementsData[id]) {
-        document.getElementById('ach-title').textContent = 'Achievement Not Found';
-        return;
-      }
-      
-      const data = achievementsData[id];
-      
-      function updateContent() {
-        const lang = document.documentElement.lang || 'ar';
-        document.getElementById('ach-title').textContent = lang === 'ar' ? data.title_ar : data.title_en;
-        document.getElementById('ach-desc').textContent = lang === 'ar' ? data.desc_ar : data.desc_en;
-      }
-      updateContent();
-      
-      const observer = new MutationObserver(updateContent);
-      observer.observe(document.documentElement, { attributes: true, attributeFilter: ['lang'] });
 
-      // ==========================================
-      // 3D PHOTO GLOBE LOGIC
-      // ==========================================
-      
-      // Lightbox Close Logic
-      const lightbox = document.getElementById('lightbox');
-      if(lightbox) {
-        lightbox.addEventListener('click', (e) => {
-          if (e.target !== lightbox.querySelector('.lightbox-img')) {
-            lightbox.classList.remove('active');
-          }
-        });
-      }
-      
-      const globe = document.getElementById('globe');
-      const container = document.getElementById('globe-container');
-      const images = data.images;
-      const numImages = images.length;
-      
-      // Responsive Radius
-      const isMobile = window.innerWidth < 768;
-      const radius = isMobile ? window.innerWidth * 0.45 : 300;
-      const itemSize = isMobile ? 80 : 140;
-      
-      // State
-      let rotationX = 0;
-      let rotationY = 0;
-      let targetRotationX = 0;
-      let targetRotationY = 0;
-      let isDragging = false;
-      let isHovering = false;
-      let startMouseX = 0;
-      let startMouseY = 0;
-      
-      const globeItems = [];
-
-      // Golden Spiral Spherical Distribution
-      const phi = Math.PI * (3 - Math.sqrt(5)); // golden angle
-      
-      images.forEach((src, i) => {
-        const y = 1 - (i / (numImages - 1)) * 2; // y goes from 1 to -1
-        const radiusAtY = Math.sqrt(1 - y * y); // radius at y
-        
-        const theta = phi * i; // golden angle increment
-        
-        const x = Math.cos(theta) * radiusAtY;
-        const z = Math.sin(theta) * radiusAtY;
-        
-        // Base Transform properties
-        const baseTx = x * radius;
-        const baseTy = y * radius;
-        const baseTz = z * radius;
-        
-        // Create Element
-        const el = document.createElement('div');
-        el.className = 'globe-item';
-        el.style.width = itemSize + 'px';
-        el.style.height = itemSize + 'px';
-        
-        const img = document.createElement('img');
-        img.src = src;
-        img.loading = 'lazy';
-        el.appendChild(img);
-        
-        globe.appendChild(el);
-        
-        // Store for animation loop
-        globeItems.push({
-          el: el,
-          x: x, y: y, z: z
-        });
-        
-        // Hover Events
-        el.addEventListener('mouseenter', () => { isHovering = true; el.classList.add('focused'); });
-        el.addEventListener('mouseleave', () => { isHovering = false; el.classList.remove('focused'); });
-        
-        // iOS touch equivalent for hover focus
-        
-        // iOS touch equivalent for hover focus
-        el.addEventListener('touchstart', () => {
-           document.querySelectorAll('.globe-item.focused').forEach(e => e.classList.remove('focused'));
-           isHovering = true; 
-           el.classList.add('focused'); 
-        });
-        
-        // Lightbox Click Logic
-        el.addEventListener('click', () => {
-          const lightbox = document.getElementById('lightbox');
-          const lightboxImg = lightbox.querySelector('.lightbox-img');
-          lightboxImg.src = img.src;
-          lightbox.classList.add('active');
-        });
-
-      });
-      
-      // Animation Loop
-      function render() {
-        if (!isDragging && !isHovering) {
-          targetRotationY -= 0.003; // Auto rotate
-        }
-        
-        // Ease rotation
-        rotationX += (targetRotationX - rotationX) * 0.1;
-        rotationY += (targetRotationY - rotationY) * 0.1;
-        
-        globe.style.transform = `rotateX(${rotationX}rad) rotateY(${rotationY}rad)`;
-        
-        // Update items to face the camera and handle depth opacity
-        globeItems.forEach(item => {
-          // Cancel out the globe's rotation so images always face the user
-          item.el.style.transform = `
-            translate3D(${item.x * radius}px, ${item.y * radius}px, ${item.z * radius}px)
-            rotateY(${-rotationY}rad) rotateX(${-rotationX}rad)
-          `;
-          
-          // Calculate world Z position to adjust opacity and scale
-          const sinX = Math.sin(rotationX), cosX = Math.cos(rotationX);
-          const sinY = Math.sin(rotationY), cosY = Math.cos(rotationY);
-          
-          // Rotate point (x,y,z) by Y then X
-          const rotatedX = item.x * cosY + item.z * sinY;
-          const rotatedZ = -item.x * sinY + item.z * cosY;
-          const finalZ = item.y * sinX + rotatedZ * cosX;
-          
-          // Z ranges from -1 (back) to 1 (front)
-          const zPercent = (finalZ + 1) / 2;
-          
-          if (!item.el.classList.contains('focused')) {
-            item.el.style.opacity = 0.2 + (zPercent * 0.8);
-            item.el.style.filter = `blur(${(1 - zPercent) * 4}px)`;
-          } else {
-             item.el.style.opacity = 1;
-             item.el.style.filter = 'none';
-          }
-        });
-        
-        requestAnimationFrame(render);
-      }
-      
-      render();
-
-      // Dragging Logic
-      function onPointerDown(e) {
-        isDragging = true;
-        container.style.cursor = 'grabbing';
-        startMouseX = e.clientX || (e.touches && e.touches[0].clientX);
-        startMouseY = e.clientY || (e.touches && e.touches[0].clientY);
-      }
-      
-      function onPointerMove(e) {
-        if (!isDragging) return;
-        const currentX = e.clientX || (e.touches && e.touches[0].clientX);
-        const currentY = e.clientY || (e.touches && e.touches[0].clientY);
-        
-        const deltaX = currentX - startMouseX;
-        const deltaY = currentY - startMouseY;
-        
-        targetRotationY += deltaX * 0.005;
-        targetRotationX -= deltaY * 0.005;
-        
-        // Clamp X rotation to prevent flipping upside down completely
-        targetRotationX = Math.max(-Math.PI/2, Math.min(Math.PI/2, targetRotationX));
-        
-        startMouseX = currentX;
-        startMouseY = currentY;
-      }
-      
-      function onPointerUp() {
-        isDragging = false;
-        container.style.cursor = 'grab';
-      }
-
-      container.addEventListener('mousedown', onPointerDown);
-      document.addEventListener('mousemove', onPointerMove);
-      document.addEventListener('mouseup', onPointerUp);
-      
-      container.addEventListener('touchstart', onPointerDown, {passive: true});
-      document.addEventListener('touchmove', onPointerMove, {passive: true});
-      document.addEventListener('touchend', onPointerUp);
-    });
-  </script>
-
-  <!-- Lightbox -->
-  <div id="lightbox" class="lightbox">
-    <span class="lightbox-close">&times;</span>
-    <img class="lightbox-img" src="" alt="Zoomed Image">
+  <!-- ==========================================================================
+       MODAL 1: VIDEO PLAYER MODAL
+       ========================================================================== -->
+  <div id="videoModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close-btn close-video-btn" aria-label="Close Video Modal">✕</button>
+      <video id="mainVideoPlayer" class="modal-video-element" controls playsinline preload="metadata">
+        <source src="/videos/Horus Ambassadors.m4v" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
+
+  <!-- ==========================================================================
+       MODAL 2: LIGHTBOX PHOTO MODAL
+       ========================================================================== -->
+  <div id="lightboxModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container" style="max-width: 880px;">
+      <button class="modal-close-btn close-lightbox-btn" aria-label="Close Lightbox">✕</button>
+      <img id="lightboxImg" class="modal-lightbox-img" src="" alt="Enlarged photo view" />
+      <div class="modal-lightbox-info">
+        <h4 id="lightboxCaption" class="modal-caption"></h4>
+        <div class="modal-lightbox-nav">
+          <button id="lightboxPrev" class="modal-nav-btn" aria-label="Previous Photo">‹</button>
+          <button id="lightboxNext" class="modal-nav-btn" aria-label="Next Photo">›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL 3: APPLICATION SUCCESS MODAL
+       ========================================================================== -->
+  <div id="successModal" class="modal-backdrop" role="dialog" aria-modal="true">
+    <div class="modal-container success-card">
+      <button class="modal-close-btn close-success-btn" aria-label="Close Success Modal">✕</button>
+      <div class="success-icon">✓</div>
+      <h3 class="modal-caption" style="font-size: 1.5rem; margin-bottom: 12px;" data-i18n="success.title">تم استلام طلبك بنجاح!</h3>
+      <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.7;" data-i18n="success.desc">
+        شكراً لاهتمامك بالانضمام لأسرة سفراء حورس. سيقوم فريق الموارد البشرية (HR) بالتواصل معك لتحديد موعد المقابلة الشخصية.
+      </p>
+      <div style="background: rgba(241, 90, 36, 0.12); border: 1px dashed var(--ha-orange); padding: 12px 20px; border-radius: var(--radius-sm); margin-bottom: 24px;">
+        <span style="font-size: 0.85rem; color: var(--text-muted);" data-i18n="success.code">كود الطلب المرجعي:</span>
+        <strong id="successAppCode" style="color: var(--ha-orange-light); font-size: 1.25rem; display: block; margin-top: 4px; font-family: monospace;">HA-000000</strong>
+      </div>
+      <button class="btn btn-brand close-success-btn" style="width: 100%;" data-i18n="success.close">حسناً، رائع!</button>
+    </div>
+  </div>
+
+
+
+  <!-- Application Logic -->
 </body>
 </html>

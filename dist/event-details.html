@@ -9,7 +9,6 @@
   </title>
 <meta content="أرشيف جميع فعاليات وأنشطة أسرة سفراء حورس من مؤتمرات وأعمال خيرية ورحلات وأنشطة جامعية منذ 2020." name="description"/>
 <link href="/logo/Horus Ambassadors.png" rel="icon" type="image/png"/>
-<link href="/css/styles.css" rel="stylesheet"/>
 <style>
    .events-back-bar {
       position: fixed; top: 0; left: 0; right: 0; height: 60px;
@@ -82,6 +81,9 @@
       border-bottom: 1px solid rgba(255,255,255,0.07); padding-bottom: 10px; margin-bottom: 24px;
     }
   </style>
+  <script type="module" crossorigin src="/assets/styles-a51RquwX.js"></script>
+  <script type="module" crossorigin src="/assets/horus-events-data-l0sNRNKZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/styles-DNATYEFk.css">
 </head>
 <body>
 <div aria-hidden="true" class="bg-canvas-wrap">
@@ -162,137 +164,68 @@
 <!-- /.events-main-grid -->
 </div>
 </div>
-<script type="module" src="/js/horus-events-data.js"></script>
 <script>
-    // Dynamic Rendering Logic
-    function renderTimeline() {
-      const timelineContainer = document.getElementById('eventsGrid');
-      if (timelineContainer && typeof eventsDataset !== 'undefined') {
-        timelineContainer.innerHTML = '';
+    // Event Details Logic
+    const urlParams = new URLSearchParams(window.location.search);
+    const eventId = urlParams.get('id');
+
+    if (typeof eventsDataset !== 'undefined' && eventId) {
+        const ev = eventsDataset.events.find(e => e.id === eventId);
         
-        let events = eventsDataset.events;
-        events.sort((a,b) => {
-            if(a.year === b.year) return b.id.localeCompare(a.id);
-            return b.year.localeCompare(a.year);
-        });
+        if (ev) {
+            document.title = ev.title_ar + " | سفراء حورس";
+            document.getElementById('eventTitleAr').textContent = ev.title_ar;
+            document.getElementById('eventTitleEn').textContent = ev.title;
+            document.getElementById('eventDescription').textContent = ev.description;
+            
+            // Fix Date Direction
+            let displayDate = ev.date || ev.year;
+            if (ev.date && ev.date.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                const parts = ev.date.split("-");
+                displayDate = parts.reverse().join("/"); 
+            }
+            document.getElementById('eventDate').innerHTML = `<i class="fas fa-calendar-alt"></i> <span dir="ltr" style="display:inline-block;">${displayDate}</span>`;
+            
+            const catData = eventsDataset.categories.find(c => c.id === ev.category);
+            document.getElementById('eventCategory').innerHTML = `<i class="fas fa-tag"></i> ${catData ? catData.label_ar : ev.category}`;
+            
+            const roleLabels = {
+                'organizer': 'تنظيم',
+                'participant': 'مشاركة',
+                'organizer_participant': 'تنظيم ومشاركة',
+                'golden_sponsor_organizer': 'راعي ذهبي ومنظم'
+            };
+            document.getElementById('eventRole').innerHTML = `<i class="fas fa-user-tie"></i> ${roleLabels[ev.role] || ev.role}`;
 
-        const catMap = eventsDataset.categories.reduce((acc, cat) => {
-            acc[cat.id] = cat;
-            return acc;
-        }, {});
+            document.getElementById('eventOfficialLink').href = ev.official_source_url;
 
-        events.forEach(ev => {
-          let hasImage = (ev.image_status === 'direct_urls_confirmed' || ev.image_status === 'direct_url_confirmed') && ev.images && ev.images.length > 0;
-          let coverImg = hasImage ? ev.images[0] : '';
-          
-          let catData = catMap[ev.category] || { label_ar: ev.category, id: ev.category };
-          let dotColor = 'gold';
-          let fallbackIcon = 'fa-star';
-          let fallbackGradient = 'linear-gradient(135deg, var(--bg-darker), var(--accent-gold-dark))';
-          
-          if(ev.category.includes('charity')) { 
-              dotColor = 'orange'; 
-              fallbackIcon = 'fa-hand-holding-heart';
-              fallbackGradient = 'linear-gradient(135deg, #FF8C00, #E65100)';
-          } else if(ev.category.includes('recreational')) { 
-              dotColor = 'teal'; 
-              fallbackIcon = 'fa-laugh-beam';
-              if (ev.title.toLowerCase().includes('trip') || ev.title_ar.includes('رحلة')) {
-                  fallbackIcon = 'fa-bus-alt';
-              } else if (ev.title.toLowerCase().includes('ramadan') || ev.title_ar.includes('رمضان')) {
-                  fallbackIcon = 'fa-moon';
-              }
-              fallbackGradient = 'linear-gradient(135deg, #008080, #004D40)';
-          } else if(ev.category.includes('conferences') || ev.category.includes('career')) { 
-              dotColor = 'teal'; 
-              fallbackIcon = 'fa-microphone-alt';
-              fallbackGradient = 'linear-gradient(135deg, #2E86C1, #1B4F72)';
-          } else if(ev.category.includes('student_orientation')) { 
-              fallbackIcon = 'fa-users';
-              fallbackGradient = 'linear-gradient(135deg, #9B59B6, #4A235A)';
-          } else if(ev.category.includes('academic_student_life')) { 
-              fallbackIcon = 'fa-university';
-              fallbackGradient = 'linear-gradient(135deg, #D4AC0D, #7D6608)';
-          }
+            const gallery = document.getElementById('eventGallery');
 
-          let displayDate = ev.date || ev.year;
-          let dateStr = `<span dir="ltr" style="display:inline-block;">${displayDate}</span>`;
+            if ((ev.image_status === 'direct_urls_confirmed' || ev.image_status === 'direct_url_confirmed') && ev.images && ev.images.length > 0) {
+                ev.images.forEach(imgUrl => {
+                    gallery.innerHTML += `
+                        <div style="position: relative; padding-top: 75%; overflow: hidden; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <img src="${imgUrl}" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" loading="lazy" onerror="this.parentElement.style.display='none'"/>
+                        </div>
+                    `;
+                });
+            } else {
+                // Completely removed the fake local fallback image
+                gallery.innerHTML = `
+                    <div style="grid-column: 1 / -1; padding: 40px; background: rgba(0,0,0,0.3); border-radius: 12px; border: 1px dashed rgba(255,255,255,0.2); text-align: center;">
+                        <i class="fas fa-camera" style="font-size: 3rem; color: rgba(255,255,255,0.2); margin-bottom: 15px;"></i>
+                        <h3 style="color: var(--text-light); margin-bottom: 10px;">لا توجد صور مباشرة متوفرة</h3>
+                        <p style="color: var(--text-muted); font-size: 0.95rem;">يرجى زيارة رابط التوثيق الرسمي أدناه لعرض ألبوم الصور الخاص بهذه الفعالية.</p>
+                    </div>
+                `;
+            }
 
-          let mediaHTML = '';
-          if (hasImage) {
-              mediaHTML = `
-                <img alt="${ev.title_ar}" class="ev-card-img" loading="lazy" src="${coverImg}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"/>
-                <div class="fallback-icon-wrap" style="display:none; position: absolute; top:0; left:0; width:100%; height:100%; background: ${fallbackGradient}; align-items: center; justify-content: center;">
-                    <i class="fas ${fallbackIcon}" style="font-size: 4rem; color: rgba(255,255,255,0.2);"></i>
-                </div>
-                <span class="ev-card-tag ev-tag-${ev.category}">${catData.label_ar}</span>
-                <span class="ev-card-year-badge">${ev.year}</span>
-              `;
-          } else {
-              // Proper Gradient Icon Placeholder instead of wrong random images!
-              mediaHTML = `
-                <div style="width: 100%; height: 200px; background: ${fallbackGradient}; display: flex; align-items: center; justify-content: center;">
-                    <i class="fas ${fallbackIcon}" style="font-size: 5rem; color: rgba(255,255,255,0.2);"></i>
-                </div>
-                <span class="ev-card-tag ev-tag-${ev.category}" style="position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.7); padding: 4px 10px; border-radius: 20px; font-size: 0.8rem; color: #fff; z-index: 2;">${catData.label_ar}</span>
-                <span class="ev-card-year-badge" style="position: absolute; bottom: 15px; left: 15px; background: var(--accent-gold); color: #000; padding: 4px 12px; border-radius: 20px; font-weight: bold; font-size: 0.85rem; z-index: 2;">${ev.year}</span>
-              `;
-          }
-
-          const itemHTML = `
-            <div class="timeline-item">
-              <div class="timeline-dot timeline-dot--${dotColor}"></div>
-              <div class="glass-card ev-card" data-cat="${ev.category}" style="cursor: pointer;" onclick="window.location.href='event-details.html?id=${ev.id}'">
-                <div class="ev-card-img-wrap" style="position: relative; overflow: hidden; border-radius: 12px 12px 0 0;">
-                  ${mediaHTML}
-                </div>
-                <div class="ev-card-body">
-                  <div class="ev-card-year" style="color: var(--accent-gold); font-size: 0.9rem; margin-bottom: 8px; text-align: right;">${dateStr}</div>
-                  <h3 class="ev-card-title">${ev.title_ar}</h3>
-                  <p class="ev-card-desc" style="opacity: 0.8; font-size: 0.95rem;">${ev.description}</p>
-                </div>
-              </div>
-            </div>
-          `;
-          timelineContainer.insertAdjacentHTML('beforeend', itemHTML);
-        });
-      }
-    }
-
-    renderTimeline();
-    
-    function updateTimelineAlternating() {
-      let visibleCount = 0;
-      const items = document.querySelectorAll('.timeline-item');
-      items.forEach(item => {
-        if (item.style.display !== 'none') {
-          item.classList.remove('left', 'right');
-          if (visibleCount % 2 === 0) {
-            item.classList.add('left');
-          } else {
-            item.classList.add('right');
-          }
-          visibleCount++;
+        } else {
+            document.getElementById('eventTitleAr').textContent = "الفعالية غير موجودة";
+            document.getElementById('eventTitleEn').textContent = "Event Not Found";
+            document.getElementById('eventOfficialLink').style.display = 'none';
         }
-      });
     }
-
-    document.querySelectorAll('.ev-filter-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.ev-filter-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filter = btn.dataset.filter;
-        document.querySelectorAll('.timeline-item').forEach(wrapper => {
-          const card = wrapper.querySelector('.ev-card');
-          if (!card) return;
-          const isVisible = (filter === 'all' || card.dataset.cat === filter);
-          wrapper.style.display = isVisible ? '' : 'none';
-        });
-        updateTimelineAlternating();
-      });
-    });
-    
-    updateTimelineAlternating();
 
     
     // Canvas background - Engineering Theme
